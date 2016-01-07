@@ -16,15 +16,15 @@ private func convert<T>(array: [(String, T)]) -> [String: T] {
     return dict
 }
 
-private func mapArray(properties: Mirror.Children) throws -> [AnyObject] {
-    return try properties
+private func mapArray(elements: Mirror.Children) throws -> [AnyObject] {
+    return try elements
         .flatMap { key, value in
             try encode(value)
     }
 }
 
-private func map(properties: Mirror.Children) throws -> [String: AnyObject] {
-    return convert(try properties
+private func map(pairs: Mirror.Children) throws -> [String: AnyObject] {
+    return convert(try pairs
         .map { key, value -> (String, AnyObject) in
             let pair = try encode(value) as! [AnyObject]
             return (pair[0] as! String, pair[1])
@@ -45,8 +45,13 @@ public func encode(object: Any?) throws -> AnyObject {
     guard let object = object else {
         return NSNull()
     }
-    if let object = object as? Encodable {
-        return object.toJSON() as? AnyObject ?? NSNull()
+    if let encodable = object as? Encodable where !encodable.isNested() {
+        let encoded = encodable.toJSON()
+        if encoded?.isNested() ?? false {
+            return try encode(encoded)
+        } else {
+            return encoded as? AnyObject ?? NSNull()
+        }
     }
     let mirror = Mirror(reflecting: object)
     if let displayType = mirror.displayStyle {
@@ -58,8 +63,8 @@ public func encode(object: Any?) throws -> AnyObject {
         case .Dictionary:
             return try map(mirror.children)
         case .Optional:
-            if let value = mirror.children.first {
-                return try encode(value.value)
+            if let some = mirror.children.first {
+                return try encode(some.value)
             }
             return NSNull()
         default:

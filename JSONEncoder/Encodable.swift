@@ -29,3 +29,14 @@ extension Int64: BasicEncodable {}
 extension Float: BasicEncodable {}
 extension Double: BasicEncodable {}
 extension String: BasicEncodable {}
+
+// workaround: We cannnot define extension typed Array or Dictionary.
+extension Array: BasicEncodable {}
+extension Dictionary: BasicEncodable {}
+
+internal extension Encodable {
+    func isNested() -> Bool {
+        let mirror = Mirror(reflecting: self)
+        return mirror.displayStyle == .Dictionary || mirror.displayStyle == .Collection
+    }
+}
