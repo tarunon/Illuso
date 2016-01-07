@@ -8,13 +8,13 @@
 
 import Foundation
 
-protocol Encodable {
+public protocol Encodable {
     func toJSON() -> BasicEncodable?
 }
 
-protocol BasicEncodable: Encodable {}
+public protocol BasicEncodable: Encodable {}
 
-extension BasicEncodable {
+public extension BasicEncodable {
     func toJSON() -> BasicEncodable? {
         return self
     }
