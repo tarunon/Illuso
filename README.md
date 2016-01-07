@@ -10,7 +10,6 @@ class A {
 }
 
 let json = try! encode(A())
-let string = try! stringify(A())
 ```
 Tuple、SetはArrayとして解釈します。
 Enumは後述のEncodableを定義していない場合はエラーです。
@@ -18,11 +17,10 @@ Enumは後述のEncodableを定義していない場合はエラーです。
 ## Encodable
 Encodableを実装することで独自にエンコードを定義できます。
 EnumやObjective-C由来のクラスの多くはエラーになるので、定義しましょう。
-返り値のBasicEncodableは、Bool、数、文字列を定義できます。
 ```swift
 extension NSURL: Encodable {
-    func toJSON() -> BasicEncodable? {
-        return self.absoluteString
+    func toJSON() -> JSON {
+        return .STRING(self.absoluteString)
     }
 }
 ```
@@ -34,6 +32,5 @@ git "http://git.linecorp.com/tarunon/JSONEncoder.git"
 
 ## Todo
 Naming.
-Encodable.toJSON() cannot return [BasicEncodable] or [String: BasicEncodable] yet. Support them.
 Write tests.
 Upload public github.
