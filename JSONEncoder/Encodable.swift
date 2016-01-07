@@ -20,6 +20,12 @@ extension String: Encodable {
     }
 }
 
+extension NSString: Encodable {
+    public func toJSON() -> JSON {
+        return .STRING(self)
+    }
+}
+
 extension Number {
     public func toJSON() -> JSON {
         return .NUMBER(self as! NSNumber)
@@ -39,3 +45,4 @@ extension UInt32: Number {}
 extension UInt64: Number {}
 extension Float: Number {}
 extension Double: Number {}
+extension NSNumber: Number {}
