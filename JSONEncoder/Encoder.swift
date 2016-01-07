@@ -74,7 +74,7 @@ public func encode(object: Any?) throws -> AnyObject {
     throw JSONError.UnsupportedType(object)
 }
 
-public func stringify(obj: Any?, prettyPrinted: Bool) throws -> String {
+public func stringify(obj: Any?, prettyPrinted: Bool = false) throws -> String {
     let json = try encode(obj)
     guard json is [AnyObject] || json is [String: AnyObject] else {
         throw JSONError.IncorrectTopLebel(json)
