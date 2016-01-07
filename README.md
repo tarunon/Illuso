@@ -33,6 +33,7 @@ git "http://git.linecorp.com/tarunon/JSONEncoder.git"
 ```
 
 ## Todo
+Naming.
 Encodable.toJSON() cannot return [BasicEncodable] or [String: BasicEncodable] yet. Support them.
 Write tests.
 Upload public github.
