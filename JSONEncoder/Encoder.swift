@@ -19,14 +19,14 @@ private func convert<T>(array: [(String, T)]) -> [String: T] {
 private func mapArray(elements: Mirror.Children) throws -> [AnyObject] {
     return try elements
         .flatMap { key, value in
-            try encode(value)
+            try encode(value).asObject()
     }
 }
 
 private func map(pairs: Mirror.Children) throws -> [String: AnyObject] {
     return convert(try pairs
         .map { key, value -> (String, AnyObject) in
-            let pair = try encode(value) as! [AnyObject]
+            guard case .ARRAY(let pair) = try encode(value) else { throw JSONError.Unknown }
             return (pair[0] as! String, pair[1])
         })
 }
@@ -37,55 +37,39 @@ private func analisys(properties: Mirror.Children) throws -> [String: AnyObject]
             key.map { ($0, value) }
         }
         .map { key, value in
-            try (key, encode(value))
+            try (key, encode(value).asObject())
         })
 }
 
-public func encode(object: Any?) throws -> AnyObject {
+public func encode(object: Any?) throws -> JSON {
     guard let object = object else {
-        return NSNull()
+        return .NULL
     }
-    if let encodable = object as? Encodable where !encodable.isNested() {
+    if let encodable = object as? Encodable {
         let encoded = encodable.toJSON()
-        if encoded?.isNested() ?? false {
-            return try encode(encoded)
+        if encoded.isNested() {
+            return try encode(encoded.asObject())
         } else {
-            return encoded as? AnyObject ?? NSNull()
+            return encoded
         }
     }
     let mirror = Mirror(reflecting: object)
     if let displayType = mirror.displayStyle {
         switch displayType {
         case .Struct, .Class:
-            return try analisys(mirror.children)
+            return .DICTIONARY(try analisys(mirror.children))
         case .Collection, .Set, .Tuple:
-            return try mapArray(mirror.children)
+            return .ARRAY(try mapArray(mirror.children))
         case .Dictionary:
-            return try map(mirror.children)
+            return .DICTIONARY(try map(mirror.children))
         case .Optional:
             if let some = mirror.children.first {
                 return try encode(some.value)
             }
-            return NSNull()
+            return .NULL
         default:
             break
         }
     }
     throw JSONError.UnsupportedType(object)
-}
-
-public func stringify(obj: Any?, prettyPrinted: Bool = false) throws -> String {
-    let json = try encode(obj)
-    guard json is [AnyObject] || json is [String: AnyObject] else {
-        throw JSONError.IncorrectTopLebel(json)
-    }
-    do {
-        let data = try NSJSONSerialization.dataWithJSONObject(json, options: prettyPrinted ? .PrettyPrinted : [])
-        if let string = String(data: data, encoding: NSUTF8StringEncoding) {
-            return string
-        }
-        throw JSONError.FailedDecoding(data)
-    } catch {
-        throw JSONError.FailedStringify(error)
-    }
 }

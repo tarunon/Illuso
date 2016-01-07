@@ -9,34 +9,28 @@
 import Foundation
 
 public protocol Encodable {
-    func toJSON() -> BasicEncodable?
+    func toJSON() -> JSON
 }
 
-public protocol BasicEncodable: Encodable {}
+public protocol Number: Encodable {}
 
-public extension BasicEncodable {
-    func toJSON() -> BasicEncodable? {
-        return self
+extension String: Encodable {
+    public func toJSON() -> JSON {
+        return .STRING(self)
     }
 }
 
-extension Bool: BasicEncodable {}
-extension Int: BasicEncodable {}
-extension Int8: BasicEncodable {}
-extension Int16: BasicEncodable {}
-extension Int32: BasicEncodable {}
-extension Int64: BasicEncodable {}
-extension Float: BasicEncodable {}
-extension Double: BasicEncodable {}
-extension String: BasicEncodable {}
-
-// workaround: We cannnot define extension typed Array or Dictionary.
-extension Array: BasicEncodable {}
-extension Dictionary: BasicEncodable {}
-
-internal extension Encodable {
-    func isNested() -> Bool {
-        let mirror = Mirror(reflecting: self)
-        return mirror.displayStyle == .Dictionary || mirror.displayStyle == .Collection
+extension Number {
+    public func toJSON() -> JSON {
+        return .NUMBER(self as! NSNumber)
     }
 }
+
+extension Bool: Number {}
+extension Int: Number {}
+extension Int8: Number {}
+extension Int16: Number {}
+extension Int32: Number {}
+extension Int64: Number {}
+extension Float: Number {}
+extension Double: Number {}
