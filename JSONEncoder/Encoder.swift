@@ -31,7 +31,7 @@ private func map(properties: Mirror.Children) throws -> [String: AnyObject] {
         })
 }
 
-private func encode(properties: Mirror.Children) throws -> [String: AnyObject] {
+private func analisys(properties: Mirror.Children) throws -> [String: AnyObject] {
     return convert(try properties
         .flatMap { key, value in
             key.map { ($0, value) }
@@ -52,7 +52,7 @@ public func encode(object: Any?) throws -> AnyObject {
     if let displayType = mirror.displayStyle {
         switch displayType {
         case .Struct, .Class:
-            return try encode(mirror.children)
+            return try analisys(mirror.children)
         case .Collection, .Set, .Tuple:
             return try mapArray(mirror.children)
         case .Dictionary:

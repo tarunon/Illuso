@@ -20,10 +20,6 @@ public extension BasicEncodable {
     }
 }
 
-extension NSString: BasicEncodable {}
-extension NSNumber: BasicEncodable {}
-extension NSNull: BasicEncodable {}
-
 extension Bool: BasicEncodable {}
 extension Int: BasicEncodable {}
 extension Int8: BasicEncodable {}
