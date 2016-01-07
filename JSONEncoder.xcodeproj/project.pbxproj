@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB1488711C3E2A1F0078C158 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1488701C3E2A1F0078C158 /* Error.swift */; };
 		EB37BFFB1C3E276C00EAFDEC /* JSONEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EB37BFFA1C3E276C00EAFDEC /* JSONEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB37C0021C3E276C00EAFDEC /* JSONEncoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB37BFF71C3E276C00EAFDEC /* JSONEncoder.framework */; };
 		EB37C0071C3E276C00EAFDEC /* JSONEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB37C0061C3E276C00EAFDEC /* JSONEncoderTests.swift */; };
+		EB37C0121C3E277700EAFDEC /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB37C0111C3E277700EAFDEC /* Encoder.swift */; };
+		EB37C0141C3E279200EAFDEC /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB37C0131C3E279200EAFDEC /* Encodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +26,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB1488701C3E2A1F0078C158 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		EB37BFF71C3E276C00EAFDEC /* JSONEncoder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONEncoder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB37BFFA1C3E276C00EAFDEC /* JSONEncoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONEncoder.h; sourceTree = "<group>"; };
 		EB37BFFC1C3E276C00EAFDEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB37C0011C3E276C00EAFDEC /* JSONEncoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONEncoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB37C0061C3E276C00EAFDEC /* JSONEncoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoderTests.swift; sourceTree = "<group>"; };
 		EB37C0081C3E276C00EAFDEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB37C0111C3E277700EAFDEC /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
+		EB37C0131C3E279200EAFDEC /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				EB37BFFA1C3E276C00EAFDEC /* JSONEncoder.h */,
+				EB37C0131C3E279200EAFDEC /* Encodable.swift */,
+				EB37C0111C3E277700EAFDEC /* Encoder.swift */,
+				EB1488701C3E2A1F0078C158 /* Error.swift */,
 				EB37BFFC1C3E276C00EAFDEC /* Info.plist */,
 			);
 			path = JSONEncoder;
@@ -194,6 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB37C0121C3E277700EAFDEC /* Encoder.swift in Sources */,
+				EB1488711C3E2A1F0078C158 /* Error.swift in Sources */,
+				EB37C0141C3E279200EAFDEC /* Encodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +320,7 @@
 		EB37C00C1C3E276C00EAFDEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +331,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.JSONEncoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EB37C00D1C3E276C00EAFDEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -376,6 +391,7 @@
 				EB37C00D1C3E276C00EAFDEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB37C00E1C3E276C00EAFDEC /* Build configuration list for PBXNativeTarget "JSONEncoderTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +400,7 @@
 				EB37C0101C3E276C00EAFDEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
