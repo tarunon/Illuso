@@ -34,15 +34,61 @@ extension Number {
 
 extension Bool: Number {}
 extension Int: Number {}
-extension Int8: Number {}
-extension Int16: Number {}
-extension Int32: Number {}
-extension Int64: Number {}
 extension UInt: Number {}
-extension UInt8: Number {}
-extension UInt16: Number {}
-extension UInt32: Number {}
-extension UInt64: Number {}
 extension Float: Number {}
 extension Double: Number {}
 extension NSNumber: Number {}
+
+extension Int8: Number {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(integer: Int(self)))
+    }
+}
+
+extension Int16: Number  {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(integer: Int(self)))
+    }
+}
+
+extension Int32: Number  {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(integer: Int(self)))
+    }
+}
+
+extension Int64: Number  {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(integer: Int(self)))
+    }
+}
+
+extension UInt8: Number {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(unsignedLong: UInt(self)))
+    }
+}
+
+extension UInt16: Number {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(unsignedLong: UInt(self)))
+    }
+}
+
+extension UInt32: Number {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(unsignedLong: UInt(self)))
+    }
+}
+
+extension UInt64: Number {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(unsignedLong: UInt(self)))
+    }
+}
+
+extension Float80: Number {
+    public func toJSON() -> JSON {
+        return .NUMBER(NSNumber(float: Float(self)))
+    }
+}
