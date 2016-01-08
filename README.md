@@ -23,7 +23,7 @@ Of course Encodable can be implemented at Struct, and Class.
 
 ## Installation
 ```ruby
-git "https://github.com/tarunon/Illuso.git"
+github "tarunon/Illuso"
 ```
 
 ## LICENSE
