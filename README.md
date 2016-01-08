@@ -22,6 +22,7 @@ extension NSURL: Encodable {
 Of course Encodable can be implemented at Struct, and Class.
 
 ## Installation
+Use Carthage.
 ```ruby
 github "tarunon/Illuso"
 ```
