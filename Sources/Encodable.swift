@@ -25,12 +25,6 @@ extension String: Encodable {
     }
 }
 
-extension NSString: Encodable {
-    public func encode() throws -> JSON {
-        return .STRING(self as String)
-    }
-}
-
 extension Bool: Encodable {
     public func encode() throws -> JSON {
         return .BOOL(self)
@@ -44,12 +38,6 @@ public protocol Number: Encodable {
 extension Number {
     public func encode() throws -> JSON {
         return .NUMBER(self)
-    }
-}
-
-extension NSNumber: Number {
-    public func asObject() -> AnyObject {
-        return self
     }
 }
 
