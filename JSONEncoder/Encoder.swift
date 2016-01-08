@@ -19,14 +19,14 @@ private func convert<T>(array: [(String, T)]) -> [String: T] {
 private func mapArray(elements: Mirror.Children) throws -> [AnyObject] {
     return try elements
         .flatMap { key, value in
-            try encode(value).asObject()
+            try _encode(value).asObject()
     }
 }
 
 private func map(pairs: Mirror.Children) throws -> [String: AnyObject] {
     return convert(try pairs
         .map { key, value -> (String, AnyObject) in
-            guard case .ARRAY(let pair) = try encode(value) else { throw JSONError.Unknown }
+            guard case .ARRAY(let pair) = try _encode(value) else { throw JSONError.Unknown }
             return (pair[0] as! String, pair[1])
         })
 }
@@ -37,21 +37,16 @@ private func analisys(properties: Mirror.Children) throws -> [String: AnyObject]
             key.map { ($0, value) }
         }
         .map { key, value in
-            try (key, encode(value).asObject())
+            try (key, _encode(value).asObject())
         })
 }
 
-public func encode(object: Any?) throws -> JSON {
+internal func _encode(object: Any?) throws -> JSON {
     guard let object = object else {
         return .NULL
     }
     if let encodable = object as? Encodable {
-        let encoded = encodable.toJSON()
-        if encoded.isNested() {
-            return try encode(encoded.asObject())
-        } else {
-            return encoded
-        }
+        return try encodable.encode()
     }
     let mirror = Mirror(reflecting: object)
     if let displayType = mirror.displayStyle {
@@ -64,7 +59,7 @@ public func encode(object: Any?) throws -> JSON {
             return .DICTIONARY(try map(mirror.children))
         case .Optional:
             if let some = mirror.children.first {
-                return try encode(some.value)
+                return try _encode(some.value)
             }
             return .NULL
         default:
@@ -72,4 +67,9 @@ public func encode(object: Any?) throws -> JSON {
         }
     }
     throw JSONError.UnsupportedType(object)
+}
+
+// workaround: We cannot overload class method and global function.
+public func encode(object: Any?) throws -> JSON {
+    return try _encode(object)
 }

@@ -10,30 +10,18 @@ import Foundation
 
 public enum JSON {
     case NULL
-    case STRING(NSString)
+    case BOOL(Bool)
+    case STRING(String)
     case NUMBER(NSNumber)
     case ARRAY(NSArray)
     case DICTIONARY(NSDictionary)
-    
-    init(object: AnyObject) throws {
-        switch object {
-        case is String:
-            self = .STRING(object as! String)
-        case is Number:
-            self = .NUMBER(object as! NSNumber)
-        case is NSArray:
-            self = .ARRAY(object as! NSArray)
-        case is NSDictionary:
-            self = .DICTIONARY(object as! NSDictionary)
-        default:
-            throw JSONError.UnsupportedType(object)
-        }
-    }
     
     public func asObject() -> AnyObject {
         switch self {
         case .NULL:
             return NSNull()
+        case .BOOL(let bool):
+            return bool
         case .STRING(let string):
             return string
         case .NUMBER(let number):
@@ -46,11 +34,10 @@ public enum JSON {
     }
     
     internal func isNested() -> Bool {
-        if case .ARRAY(_) = self {
+        switch self {
+        case .ARRAY(_), .DICTIONARY(_):
             return true
-        } else if case .DICTIONARY(_) = self {
-            return true
-        } else {
+        default:
             return false
         }
     }
