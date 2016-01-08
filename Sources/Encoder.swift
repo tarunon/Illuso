@@ -16,35 +16,38 @@ internal func convert<T>(array: [(String, T)]) -> [String: T] {
     return dict
 }
 
-internal func map(elements: Mirror.Children) throws -> [AnyObject] {
+internal func map(elements: Mirror.Children) throws -> [JSON] {
     return try elements
         .flatMap { key, value in
-            try _encode(value).asObject()
+            try _encode(value)
     }
 }
 
-internal func map(pairs: Mirror.Children) throws -> [String: AnyObject] {
+internal func map(pairs: Mirror.Children) throws -> [String: JSON] {
     return convert(try pairs
-        .map { key, value -> (String, AnyObject) in
+        .map { key, value -> (String, JSON) in
             guard case .ARRAY(let pair) = try _encode(value) else { throw JSONError.Unknown }
-            guard let key = pair[0] as? String else { throw JSONError.KeyIsNotString(pair[0]) }
+            guard let key = pair[0].asObject() as? String else { throw JSONError.KeyIsNotString(pair[0].asObject()) }
             return (key, pair[1])
         })
 }
 
-internal func analisys(properties: Mirror.Children) throws -> [String: AnyObject] {
+internal func analisys(properties: Mirror.Children) throws -> [String: JSON] {
     return convert(try properties
         .flatMap { key, value in
             key.map { ($0, value) }
         }
         .map { key, value in
-            try (key, _encode(value).asObject())
+            try (key, _encode(value))
         })
 }
 
 internal func _encode(object: Any?) throws -> JSON {
     guard let object = object else {
         return .NULL
+    }
+    if let json = object as? JSON {
+        return json
     }
     if let encodable = object as? Encodable {
         return try encodable.encode()

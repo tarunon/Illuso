@@ -14,7 +14,7 @@ class EncoderTests: XCTestCase {
     func testStandardEncodable() {
         do {
             let object = StandardEncodables()
-            guard case .DICTIONARY(let json) = try encode(object) else {
+            guard let json = try encode(object).asObject() as? [String: AnyObject] else {
                 XCTFail()
                 return
             }
@@ -54,13 +54,13 @@ class EncoderTests: XCTestCase {
             }
             XCTAssertEqual(string, object.customValue())
 
-            guard case .ARRAY(let array) = try encode([object]) else {
+            guard let array = try encode([object]).asObject() as? [AnyObject] else {
                 XCTFail()
                 return
             }
             XCTAssertEqual(array as! [String], [object.customValue()])
 
-            guard case .DICTIONARY(let dictionary) = try encode(["value": object]) else {
+            guard let dictionary = try encode(["value": object]).asObject() as? [String: AnyObject] else {
                 XCTFail()
                 return
             }
