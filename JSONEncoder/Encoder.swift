@@ -8,7 +8,7 @@
 
 import Foundation
 
-private func convert<T>(array: [(String, T)]) -> [String: T] {
+internal func convert<T>(array: [(String, T)]) -> [String: T] {
     var dict = [String: T]()
     array.forEach { key, value in
         dict[key] = value
@@ -16,14 +16,14 @@ private func convert<T>(array: [(String, T)]) -> [String: T] {
     return dict
 }
 
-private func mapArray(elements: Mirror.Children) throws -> [AnyObject] {
+internal func map(elements: Mirror.Children) throws -> [AnyObject] {
     return try elements
         .flatMap { key, value in
             try _encode(value).asObject()
     }
 }
 
-private func map(pairs: Mirror.Children) throws -> [String: AnyObject] {
+internal func map(pairs: Mirror.Children) throws -> [String: AnyObject] {
     return convert(try pairs
         .map { key, value -> (String, AnyObject) in
             guard case .ARRAY(let pair) = try _encode(value) else { throw JSONError.Unknown }
@@ -31,7 +31,7 @@ private func map(pairs: Mirror.Children) throws -> [String: AnyObject] {
         })
 }
 
-private func analisys(properties: Mirror.Children) throws -> [String: AnyObject] {
+internal func analisys(properties: Mirror.Children) throws -> [String: AnyObject] {
     return convert(try properties
         .flatMap { key, value in
             key.map { ($0, value) }
@@ -54,7 +54,7 @@ internal func _encode(object: Any?) throws -> JSON {
         case .Struct, .Class:
             return .DICTIONARY(try analisys(mirror.children))
         case .Collection, .Set, .Tuple:
-            return .ARRAY(try mapArray(mirror.children))
+            return .ARRAY(try map(mirror.children))
         case .Dictionary:
             return .DICTIONARY(try map(mirror.children))
         case .Optional:

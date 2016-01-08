@@ -41,7 +41,11 @@ public protocol Number: Encodable {}
 
 extension Number {
     public func encode() throws -> JSON {
-        return .NUMBER(self as! NSNumber)
+        if let number = self as? NSNumber {
+            return .NUMBER(number)
+        } else {
+            throw JSONError.UnsupportedType(self)
+        }
     }
 }
 
