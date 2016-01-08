@@ -103,8 +103,8 @@ extension UInt64: Number {
     }
 }
 
-extension Float80: Number {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(float: Float(self)))
-    }
-}
+//extension Float80: Number {
+//    public func encode() throws -> JSON {
+//        return .NUMBER(NSNumber(float: Float(self)))
+//    }
+//}
