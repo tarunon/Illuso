@@ -25,86 +25,90 @@ extension String: Encodable {
     }
 }
 
-extension NSString: Encodable {
-    public func encode() throws -> JSON {
-        return .STRING(self as String)
-    }
-}
-
 extension Bool: Encodable {
     public func encode() throws -> JSON {
         return .BOOL(self)
     }
 }
 
-public protocol Number: Encodable {}
+public protocol Number: Encodable {
+    func asObject() -> AnyObject
+}
 
 extension Number {
     public func encode() throws -> JSON {
-        if let number = self as? NSNumber {
-            return .NUMBER(number)
-        } else {
-            throw JSONError.UnsupportedType(self)
-        }
+        return .NUMBER(self)
     }
 }
 
-extension Int: Number {}
-extension UInt: Number {}
-extension Float: Number {}
-extension Double: Number {}
-extension NSNumber: Number {}
+extension Int: Number {
+    public func asObject() -> AnyObject {
+        return self
+    }
+}
+
+extension UInt: Number {
+    public func asObject() -> AnyObject {
+        return self
+    }
+}
+
+extension Float: Number {
+    public func asObject() -> AnyObject {
+        return self
+    }
+}
+
+extension Double: Number {
+    public func asObject() -> AnyObject {
+        return self
+    }
+}
 
 extension Int8: Number {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(integer: Int(self)))
+    public func asObject() -> AnyObject {
+        return Int(self)
     }
 }
 
 extension Int16: Number  {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(integer: Int(self)))
+    public func asObject() -> AnyObject {
+        return Int(self)
     }
 }
 
 extension Int32: Number  {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(integer: Int(self)))
+    public func asObject() -> AnyObject {
+        return Int(self)
     }
 }
 
 extension Int64: Number  {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(integer: Int(self)))
+    public func asObject() -> AnyObject {
+        return Int(self)
     }
 }
 
 extension UInt8: Number {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(unsignedLong: UInt(self)))
+    public func asObject() -> AnyObject {
+        return UInt(self)
     }
 }
 
 extension UInt16: Number {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(unsignedLong: UInt(self)))
+    public func asObject() -> AnyObject {
+        return UInt(self)
     }
 }
 
 extension UInt32: Number {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(unsignedLong: UInt(self)))
+    public func asObject() -> AnyObject {
+        return UInt(self)
     }
 }
 
 extension UInt64: Number {
-    public func encode() throws -> JSON {
-        return .NUMBER(NSNumber(unsignedLong: UInt(self)))
+    public func asObject() -> AnyObject {
+        return UInt(self)
     }
 }
-
-//extension Float80: Number {
-//    public func encode() throws -> JSON {
-//        return .NUMBER(NSNumber(float: Float(self)))
-//    }
-//}

@@ -12,9 +12,9 @@ public enum JSON {
     case NULL
     case BOOL(Bool)
     case STRING(String)
-    case NUMBER(NSNumber)
-    case ARRAY(NSArray)
-    case DICTIONARY(NSDictionary)
+    case NUMBER(Number)
+    case ARRAY([AnyObject])
+    case DICTIONARY([String: AnyObject])
     
     public func asObject() -> AnyObject {
         switch self {
@@ -25,7 +25,7 @@ public enum JSON {
         case .STRING(let string):
             return string
         case .NUMBER(let number):
-            return number
+            return number.asObject()
         case .ARRAY(let array):
             return array
         case .DICTIONARY(let dictionary):

@@ -12,9 +12,7 @@ import Foundation
 struct StandardEncodables {
     let null: Any? = nil
     let string: String = "abc"
-    let nsstring: NSString = "abc"
     let bool: Bool = true
-    let nsnumber: NSNumber = 123
     let int: Int = 123
     let int8: Int8 = 123
     let int16: Int16 = 123
@@ -27,7 +25,6 @@ struct StandardEncodables {
     let uint64: UInt64 = 123
     let float: Float = 1.1
     let double: Double = 1.1
-//    let float80: Float80 = 1.1
     let array: [Int] = [1, 2, 3]
     let anyArray: [Any] = [true, 2, "3"]
     let dictionary: [String: Int] = ["a": 1, "b": 2, "c": 3]
