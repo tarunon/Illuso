@@ -27,7 +27,8 @@ internal func map(pairs: Mirror.Children) throws -> [String: AnyObject] {
     return convert(try pairs
         .map { key, value -> (String, AnyObject) in
             guard case .ARRAY(let pair) = try _encode(value) else { throw JSONError.Unknown }
-            return (pair[0] as! String, pair[1])
+            guard let key = pair[0] as? String else { throw JSONError.KeyIsNotString(pair[0]) }
+            return (key, pair[1])
         })
 }
 

@@ -13,5 +13,6 @@ public enum JSONError: ErrorType {
     case IncorrectTopLebel(JSON)
     case FailedDecoding(NSData)
     case FailedStringify(ErrorType)
+    case KeyIsNotString(Any)
     case Unknown
 }
