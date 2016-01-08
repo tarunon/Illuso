@@ -26,6 +26,9 @@ Of course Encodable can be implemented at Struct, and Class.
 git "https://github.com/tarunon/Illuso.git"
 ```
 
+## LICENSE
+MIT
+
 ## Motivate
 In swift, we may use awesome JSON decoding tools [Argo](https://github.com/thoughtbot/Argo "Argo"), or [Himotoki](https://github.com/ikesyo/Himotoki "Himotoki"), but these cannot encode.  
 Illuso is required no coding because used Mirror, so we can use with Argo or Himotoki without conflict!!
