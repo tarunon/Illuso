@@ -1,36 +1,31 @@
-# JSONEncoder
-@umakozが「何でもJSONに出来るツールが欲しいよね」と仰ったので作った。
+# Illuso
+Illuso is JSON encoder for swift.
 
 ## Summary
-大凡のclass,structをJSONにエンコード出来ます。出来ない場合はエラーを吐きます。
 ```swift
-class A {
-    var text: String = "A"
-    var number: Int = 100
-}
-
-let json = try! encode(A())
+let json = try! encode(CGRectZero)
+print(try! json.stringify())
 ```
-Tuple、SetはArrayとして解釈します。
-Enumは後述のEncodableを定義していない場合はエラーです。
+Illuso can encode Struct or Swift Class.  
+Any code for encoding is not required in Illuso.  
 
-## Encodable
-Encodableを実装することで独自にエンコードを定義できます。
-EnumやObjective-C由来のクラスの多くはエラーになるので、定義しましょう。
+## Custom Encoding
+Unfortunately, Enum and some of Objective-C Class (e.g. NSURL, NSDate, UIView ...) is unsupported in Illuso.  
+If you want to encode these types, can use Encodable protocol.
 ```swift
 extension NSURL: Encodable {
-    func toJSON() -> JSON {
-        return .STRING(self.absoluteString)
+    func encode() throws -> JSON {
+        return try encode(self.absoluteString)
     }
 }
 ```
+Of course Encodable can be implemented at Struct, and Class.
 
 ## Installation
 ```ruby
-git "http://git.linecorp.com/tarunon/JSONEncoder.git"
+git "https://github.com/tarunon/Illuso.git"
 ```
 
-## Todo
-Naming.
-Write tests.
-Upload public github.
+## Motivate
+In swift, we may use awesome JSON decoding tools [Argo](https://github.com/thoughtbot/Argo "Argo"), or [Himotoki](https://github.com/ikesyo/Himotoki "Himotoki"), but these cannot encode.  
+Illuso is required no coding because used Mirror, so we can use with Argo or Himotoki without conflict!!
