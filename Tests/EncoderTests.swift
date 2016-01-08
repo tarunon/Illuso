@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import JSONEncoder
+@testable import Illuso
 
 class EncoderTests: XCTestCase {
     

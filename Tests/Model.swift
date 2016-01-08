@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import JSONEncoder
+@testable import Illuso
 
 struct StandardEncodables {
     let null: Any? = nil
