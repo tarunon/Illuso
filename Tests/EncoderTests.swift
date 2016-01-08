@@ -20,9 +20,7 @@ class EncoderTests: XCTestCase {
             }
             XCTAssert(json["null"]!.isKindOfClass(NSNull.self))
             XCTAssertEqual(json["string"] as? String, object.string)
-            XCTAssertEqual(json["nsstring"] as? NSString, object.nsstring)
             XCTAssertEqual(json["bool"] as? Bool, object.bool)
-            XCTAssertEqual(json["nsnumber"] as? NSNumber, object.nsnumber)
             XCTAssertEqual(json["int"] as? Int, object.int)
             XCTAssertEqual(Int8(json["int8"] as! Int), object.int8)
             XCTAssertEqual(Int16(json["int16"] as! Int), object.int16)
@@ -35,7 +33,6 @@ class EncoderTests: XCTestCase {
             XCTAssertEqual(UInt64(json["uint64"] as! UInt), object.uint64)
             XCTAssertEqual(json["float"] as? Float, object.float)
             XCTAssertEqual(json["double"] as? Double, object.double)
-//            XCTAssertEqual(json["float80"] as? Float, Float(object.float80))
             XCTAssertEqual(json["array"] as! [Int], object.array)
             XCTAssertEqual(json["anyArray"] as? NSArray, object.anyArray.map { $0 as! AnyObject })
             XCTAssertEqual(json["dictionary"] as! [String: Int], object.dictionary)
@@ -61,13 +58,13 @@ class EncoderTests: XCTestCase {
                 XCTFail()
                 return
             }
-            XCTAssertEqual(array, [object.customValue()])
+            XCTAssertEqual(array as! [String], [object.customValue()])
 
             guard case .DICTIONARY(let dictionary) = try encode(["value": object]) else {
                 XCTFail()
                 return
             }
-            XCTAssertEqual(dictionary, ["value": object.customValue()])
+            XCTAssertEqual(dictionary as! [String: String], ["value": object.customValue()])
         } catch {
             XCTFail()
         }
