@@ -32,14 +32,16 @@ internal func map(pairs: Mirror.Children) throws -> [String: JSON] {
         })
 }
 
-internal func analisys(properties: Mirror.Children) throws -> [String: JSON] {
-    return convert(try properties
+internal func analisys(mirror: Mirror) throws -> [(String, JSON)] {
+    let superclassProperties = try mirror.superclassMirror().map { try analisys($0) } ?? []
+    let properties = try mirror.children
         .flatMap { key, value in
             key.map { ($0, value) }
         }
         .map { key, value in
             try (key, _encode(value))
-        })
+        }
+    return superclassProperties + properties
 }
 
 internal func _encode(object: Any?) throws -> JSON {
@@ -56,7 +58,7 @@ internal func _encode(object: Any?) throws -> JSON {
     if let displayType = mirror.displayStyle {
         switch displayType {
         case .Struct, .Class:
-            return .DICTIONARY(try analisys(mirror.children))
+            return .DICTIONARY(convert(try analisys(mirror)))
         case .Collection, .Set, .Tuple:
             return .ARRAY(try map(mirror.children))
         case .Dictionary:
