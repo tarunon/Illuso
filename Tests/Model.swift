@@ -44,3 +44,11 @@ struct CustomEncodable: Encodable {
         return try encode(self.customValue())
     }
 }
+
+class ClassEncodables {
+    let classValue: String = "abc"
+}
+
+class SubclassEncodables: ClassEncodables {
+    let subclassValue: Int = 123
+}

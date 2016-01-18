@@ -70,6 +70,20 @@ class EncoderTests: XCTestCase {
         }
     }
     
+    func testSubclassEncode() {
+        do {
+            let object = SubclassEncodables()
+            guard let json = try encode(object).asObject() as? [String: AnyObject] else {
+                XCTFail()
+                return
+            }
+            XCTAssertEqual(json["classValue"] as? String, object.classValue)
+            XCTAssertEqual(json["subclassValue"] as? Int, object.subclassValue)
+        } catch {
+            XCTFail()
+        }
+    }
+    
     func testStringify() {
         do {
             let object = [1, 2, 3]
