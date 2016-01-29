@@ -48,7 +48,7 @@ class EncoderTests: XCTestCase {
         do {
             let object = CustomEncodable()
             
-            guard case .STRING(let string) = try encode(object) else {
+            guard case .String(let string) = try encode(object) else {
                 XCTFail()
                 return
             }

@@ -21,13 +21,13 @@ extension Encodable {
 
 extension String: Encodable {
     public func encode() throws -> JSON {
-        return .STRING(self)
+        return .String(self)
     }
 }
 
 extension Bool: Encodable {
     public func encode() throws -> JSON {
-        return .BOOL(self)
+        return .Bool(self)
     }
 }
 
@@ -37,7 +37,7 @@ public protocol Number: Encodable {
 
 extension Number {
     public func encode() throws -> JSON {
-        return .NUMBER(self)
+        return .Number(self)
     }
 }
 

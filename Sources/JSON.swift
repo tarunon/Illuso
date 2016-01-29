@@ -9,46 +9,46 @@
 import Foundation
 
 public enum JSON {
-    case NULL
-    case BOOL(Bool)
-    case STRING(String)
-    case NUMBER(Number)
-    case ARRAY([JSON])
-    case DICTIONARY([String: JSON])
+    case Null
+    case Bool(Swift.Bool)
+    case String(Swift.String)
+    case Number(Illuso.Number)
+    case Array([JSON])
+    case Dictionary([Swift.String: JSON])
     
     public func asObject() -> AnyObject {
         switch self {
-        case .NULL:
+        case .Null:
             return NSNull()
-        case .BOOL(let bool):
+        case .Bool(let bool):
             return bool
-        case .STRING(let string):
+        case .String(let string):
             return string
-        case .NUMBER(let number):
+        case .Number(let number):
             return number.asObject()
-        case .ARRAY(let array):
+        case .Array(let array):
             return array.map { $0.asObject() }
-        case .DICTIONARY(let dictionary):
+        case .Dictionary(let dictionary):
             return convert(dictionary.map { ($0, $1.asObject()) })
         }
     }
     
-    internal func isNested() -> Bool {
+    internal func isNested() -> Swift.Bool {
         switch self {
-        case .ARRAY(_), .DICTIONARY(_):
+        case .Array(_), .Dictionary(_):
             return true
         default:
             return false
         }
     }
     
-    public func stringify(prettyPrinted: Bool = false) throws -> String {
+    public func stringify(prettyPrinted: Swift.Bool = false) throws -> Swift.String {
         guard self.isNested() else {
             throw JSONError.IncorrectTopLebel(self)
         }
         do {
             let data = try NSJSONSerialization.dataWithJSONObject(self.asObject(), options: prettyPrinted ? .PrettyPrinted : [])
-            if let string = String(data: data, encoding: NSUTF8StringEncoding) {
+            if let string = Swift.String(data: data, encoding: NSUTF8StringEncoding) {
                 return string
             }
             throw JSONError.FailedDecoding(data)

@@ -26,7 +26,7 @@ internal func map(elements: Mirror.Children) throws -> [JSON] {
 internal func map(pairs: Mirror.Children) throws -> [String: JSON] {
     return convert(try pairs
         .map { key, value -> (String, JSON) in
-            guard case .ARRAY(let pair) = try _encode(value) else { throw JSONError.Unknown }
+            guard case .Array(let pair) = try _encode(value) else { throw JSONError.Unknown }
             guard let key = pair[0].asObject() as? String else { throw JSONError.KeyIsNotString(pair[0].asObject()) }
             return (key, pair[1])
         })
@@ -46,7 +46,7 @@ internal func analyze(mirror: Mirror) throws -> [(String, JSON)] {
 
 internal func _encode(object: Any?) throws -> JSON {
     guard let object = object else {
-        return .NULL
+        return .Null
     }
     if let json = object as? JSON {
         return json
@@ -58,16 +58,16 @@ internal func _encode(object: Any?) throws -> JSON {
     if let displayType = mirror.displayStyle {
         switch displayType {
         case .Struct, .Class:
-            return .DICTIONARY(convert(try analyze(mirror)))
+            return .Dictionary(convert(try analyze(mirror)))
         case .Collection, .Set, .Tuple:
-            return .ARRAY(try map(mirror.children))
+            return .Array(try map(mirror.children))
         case .Dictionary:
-            return .DICTIONARY(try map(mirror.children))
+            return .Dictionary(try map(mirror.children))
         case .Optional:
             if let some = mirror.children.first {
                 return try _encode(some.value)
             }
-            return .NULL
+            return .Null
         default:
             break
         }
