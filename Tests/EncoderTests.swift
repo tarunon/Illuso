@@ -84,6 +84,19 @@ class EncoderTests: XCTestCase {
         }
     }
     
+    func testRawRepresentable() {
+        do {
+            let value = EncodableRawRepresentable.EncodableCase
+            guard let number = try encode(value).asObject() as? Int else {
+                XCTFail()
+                return
+            }
+            XCTAssertEqual(number, value.rawValue)
+        } catch {
+            XCTFail()
+        }
+    }
+    
     func testStringify() {
         do {
             let object = [1, 2, 3]
