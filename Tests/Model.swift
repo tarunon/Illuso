@@ -52,3 +52,7 @@ class ClassEncodables {
 class SubclassEncodables: ClassEncodables {
     let subclassValue: Int = 123
 }
+
+enum EncodableRawRepresentable: Int, Encodable {
+    case EncodableCase
+}

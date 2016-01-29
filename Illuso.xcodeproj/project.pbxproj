@@ -36,6 +36,7 @@
 		EB1CF1E81C3F64CE007026D9 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1631C3F61FE007026D9 /* Encoder.swift */; };
 		EB1CF1E91C3F64CE007026D9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1641C3F61FE007026D9 /* Error.swift */; };
 		EB1CF1EA1C3F64CE007026D9 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1651C3F61FE007026D9 /* JSON.swift */; };
+		EB380D231C5B48A700F8473C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB380D221C5B48A700F8473C /* RawRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		EB1CF1B71C3F642E007026D9 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1CF1C01C3F642E007026D9 /* IllusoTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IllusoTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1CF1DE1C3F64B7007026D9 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB380D221C5B48A700F8473C /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				EB1CF1631C3F61FE007026D9 /* Encoder.swift */,
 				EB1CF1641C3F61FE007026D9 /* Error.swift */,
 				EB1CF1651C3F61FE007026D9 /* JSON.swift */,
+				EB380D221C5B48A700F8473C /* RawRepresentable.swift */,
 				EB1CF15E1C3F61EA007026D9 /* Illuso.h */,
 				EB1CF15F1C3F61EA007026D9 /* Info.plist */,
 			);
@@ -462,6 +465,7 @@
 			files = (
 				EB1CF18C1C3F6390007026D9 /* Encodable.swift in Sources */,
 				EB1CF18D1C3F6390007026D9 /* Encoder.swift in Sources */,
+				EB380D231C5B48A700F8473C /* RawRepresentable.swift in Sources */,
 				EB1CF18E1C3F6390007026D9 /* Error.swift in Sources */,
 				EB1CF18F1C3F6390007026D9 /* JSON.swift in Sources */,
 			);
@@ -886,6 +890,7 @@
 				EB1CF1881C3F637E007026D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB1CF1891C3F637E007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-iOS" */ = {
 			isa = XCConfigurationList;
@@ -894,6 +899,7 @@
 				EB1CF18B1C3F637E007026D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB1CF1A71C3F63EE007026D9 /* Build configuration list for PBXNativeTarget "Illuso-Mac" */ = {
 			isa = XCConfigurationList;
@@ -902,6 +908,7 @@
 				EB1CF1A91C3F63EE007026D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB1CF1AA1C3F63EE007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-Mac" */ = {
 			isa = XCConfigurationList;
@@ -910,6 +917,7 @@
 				EB1CF1AC1C3F63EE007026D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB1CF1C81C3F642E007026D9 /* Build configuration list for PBXNativeTarget "Illuso-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -918,6 +926,7 @@
 				EB1CF1CA1C3F642E007026D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB1CF1CB1C3F642E007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -926,6 +935,7 @@
 				EB1CF1CD1C3F642E007026D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB1CF1E31C3F64B7007026D9 /* Build configuration list for PBXNativeTarget "Illuso-watchOS" */ = {
 			isa = XCConfigurationList;
@@ -934,6 +944,7 @@
 				EB1CF1E51C3F64B7007026D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
