@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB1A89D51C77114F000C985C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A89D41C77114F000C985C /* RawRepresentable.swift */; };
+		EB1A89D61C77114F000C985C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A89D41C77114F000C985C /* RawRepresentable.swift */; };
+		EB1A89D71C77114F000C985C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A89D41C77114F000C985C /* RawRepresentable.swift */; };
+		EB1A89D81C77114F000C985C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A89D41C77114F000C985C /* RawRepresentable.swift */; };
 		EB1CF17F1C3F637E007026D9 /* Illuso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CF1751C3F637E007026D9 /* Illuso.framework */; };
 		EB1CF18C1C3F6390007026D9 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1621C3F61FE007026D9 /* Encodable.swift */; };
 		EB1CF18D1C3F6390007026D9 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1631C3F61FE007026D9 /* Encoder.swift */; };
@@ -36,7 +40,6 @@
 		EB1CF1E81C3F64CE007026D9 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1631C3F61FE007026D9 /* Encoder.swift */; };
 		EB1CF1E91C3F64CE007026D9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1641C3F61FE007026D9 /* Error.swift */; };
 		EB1CF1EA1C3F64CE007026D9 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1651C3F61FE007026D9 /* JSON.swift */; };
-		EB380D231C5B48A700F8473C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB380D221C5B48A700F8473C /* RawRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB1A89D41C77114F000C985C /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Sources/RawRepresentable.swift; sourceTree = "<group>"; };
 		EB1CF15E1C3F61EA007026D9 /* Illuso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Illuso.h; path = Sources/Illuso.h; sourceTree = "<group>"; };
 		EB1CF15F1C3F61EA007026D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
 		EB1CF1621C3F61FE007026D9 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encodable.swift; path = Sources/Encodable.swift; sourceTree = "<group>"; };
@@ -80,7 +84,6 @@
 		EB1CF1B71C3F642E007026D9 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1CF1C01C3F642E007026D9 /* IllusoTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IllusoTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1CF1DE1C3F64B7007026D9 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB380D221C5B48A700F8473C /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +172,7 @@
 				EB1CF1631C3F61FE007026D9 /* Encoder.swift */,
 				EB1CF1641C3F61FE007026D9 /* Error.swift */,
 				EB1CF1651C3F61FE007026D9 /* JSON.swift */,
-				EB380D221C5B48A700F8473C /* RawRepresentable.swift */,
+				EB1A89D41C77114F000C985C /* RawRepresentable.swift */,
 				EB1CF15E1C3F61EA007026D9 /* Illuso.h */,
 				EB1CF15F1C3F61EA007026D9 /* Info.plist */,
 			);
@@ -465,7 +468,7 @@
 			files = (
 				EB1CF18C1C3F6390007026D9 /* Encodable.swift in Sources */,
 				EB1CF18D1C3F6390007026D9 /* Encoder.swift in Sources */,
-				EB380D231C5B48A700F8473C /* RawRepresentable.swift in Sources */,
+				EB1A89D51C77114F000C985C /* RawRepresentable.swift in Sources */,
 				EB1CF18E1C3F6390007026D9 /* Error.swift in Sources */,
 				EB1CF18F1C3F6390007026D9 /* JSON.swift in Sources */,
 			);
@@ -486,6 +489,7 @@
 			files = (
 				EB1CF1AD1C3F641A007026D9 /* Encodable.swift in Sources */,
 				EB1CF1AE1C3F641A007026D9 /* Encoder.swift in Sources */,
+				EB1A89D61C77114F000C985C /* RawRepresentable.swift in Sources */,
 				EB1CF1AF1C3F641A007026D9 /* Error.swift in Sources */,
 				EB1CF1B01C3F641A007026D9 /* JSON.swift in Sources */,
 			);
@@ -506,6 +510,7 @@
 			files = (
 				EB1CF1CE1C3F644A007026D9 /* Encodable.swift in Sources */,
 				EB1CF1CF1C3F644A007026D9 /* Encoder.swift in Sources */,
+				EB1A89D71C77114F000C985C /* RawRepresentable.swift in Sources */,
 				EB1CF1D01C3F644A007026D9 /* Error.swift in Sources */,
 				EB1CF1D11C3F644A007026D9 /* JSON.swift in Sources */,
 			);
@@ -526,6 +531,7 @@
 			files = (
 				EB1CF1E71C3F64CE007026D9 /* Encodable.swift in Sources */,
 				EB1CF1E81C3F64CE007026D9 /* Encoder.swift in Sources */,
+				EB1A89D81C77114F000C985C /* RawRepresentable.swift in Sources */,
 				EB1CF1E91C3F64CE007026D9 /* Error.swift in Sources */,
 				EB1CF1EA1C3F64CE007026D9 /* JSON.swift in Sources */,
 			);
