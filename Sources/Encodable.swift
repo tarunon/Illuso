@@ -18,7 +18,7 @@ extension Encodable {
         return try _encode(object)
     }
     
-    // Syntax suger for Enum
+    // Syntax sugar for Enum
     public func encode(f: () -> Any?) throws -> JSON {
         return try _encode(f())
     }
