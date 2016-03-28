@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Illuso
+import Illuso
 
 class EncoderTests: XCTestCase {
     
