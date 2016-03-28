@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension RawRepresentable where Self: Encodable {
+public extension RawRepresentable where Self: Encodable {
     func encode() throws -> JSON {
         return try encode(self.rawValue)
     }
