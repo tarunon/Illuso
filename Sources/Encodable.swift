@@ -117,3 +117,14 @@ extension UInt64: Number {
         return UInt(self)
     }
 }
+
+extension ImplicitlyUnwrappedOptional: Encodable {
+    public func encode() throws -> JSON {
+        switch self {
+        case .none:
+            return JSON.null
+        case .some(let value):
+            return try _encode(value)
+        }
+    }
+}
