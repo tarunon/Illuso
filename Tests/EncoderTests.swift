@@ -39,6 +39,10 @@ class EncoderTests: XCTestCase {
             XCTAssertEqual(json["tuple"] as! [Int], [object.tuple.0, object.tuple.1, object.tuple.2])
             XCTAssertEqual(json["optional"] as? Int, object.optional)
             XCTAssertEqual(json["implicitlyUnwrappedOptional"] as? Int, object.implicitlyUnwrappedOptional)
+            let enumValues = (json["_enum"] as? NSDictionary)?["a"] as? NSArray
+            XCTAssertEqual(enumValues?[0] as? Int, 123)
+            XCTAssertEqual(enumValues?[1] as? String, "abc")
+            XCTAssertEqual(enumValues?[2] as? Float, 1.1)
         } catch {
             XCTFail()
         }
@@ -103,18 +107,6 @@ class EncoderTests: XCTestCase {
             let string = try encode(object).stringify()
             
             XCTAssertEqual(string, "[1,2,3]")
-        } catch {
-            XCTFail()
-        }
-    }
-    
-    func testFailureUnsupportedType() {
-        let url = NSURL(string: "http://a.b")
-        do {
-            _ = try encode(url)
-            XCTFail()
-        } catch JSONError.unsupportedType(let value) {
-            XCTAssertEqual(url, value as? NSURL)
         } catch {
             XCTFail()
         }

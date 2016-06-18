@@ -56,7 +56,7 @@ internal func _encode(_ object: Any?) throws -> JSON {
     }
     let mirror = Mirror(reflecting: object)
     switch mirror.displayStyle {
-    case .some(.struct), .some(.class):
+    case .some(.struct), .some(.class), .some(.enum):
         return .dictionary(convert(try analyze(mirror)))
     case .some(.collection), .some(.set), .some(.tuple):
         return .array(try map(mirror.children))
