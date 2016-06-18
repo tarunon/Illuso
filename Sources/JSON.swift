@@ -9,33 +9,33 @@
 import Foundation
 
 public enum JSON {
-    case Null
-    case Bool(Swift.Bool)
-    case String(Swift.String)
-    case Number(Illuso.Number)
-    case Array([JSON])
-    case Dictionary([Swift.String: JSON])
+    case null
+    case bool(Swift.Bool)
+    case string(Swift.String)
+    case number(Illuso.Number)
+    case array([JSON])
+    case dictionary([Swift.String: JSON])
     
     public func asObject() -> AnyObject {
         switch self {
-        case .Null:
+        case .null:
             return NSNull()
-        case .Bool(let bool):
+        case .bool(let bool):
             return bool
-        case .String(let string):
+        case .string(let string):
             return string
-        case .Number(let number):
+        case .number(let number):
             return number.asObject()
-        case .Array(let array):
+        case .array(let array):
             return array.map { $0.asObject() }
-        case .Dictionary(let dictionary):
+        case .dictionary(let dictionary):
             return convert(dictionary.map { ($0, $1.asObject()) })
         }
     }
     
     internal func isNested() -> Swift.Bool {
         switch self {
-        case .Array(_), .Dictionary(_):
+        case .array(_), .dictionary(_):
             return true
         default:
             return false
@@ -44,16 +44,16 @@ public enum JSON {
     
     public func stringify(prettyPrinted: Swift.Bool = false) throws -> Swift.String {
         guard self.isNested() else {
-            throw JSONError.IncorrectTopLebel(self)
+            throw JSONError.incorrectTopLebel(self)
         }
         do {
-            let data = try NSJSONSerialization.dataWithJSONObject(self.asObject(), options: prettyPrinted ? .PrettyPrinted : [])
-            if let string = Swift.String(data: data, encoding: NSUTF8StringEncoding) {
+            let data = try JSONSerialization.data(withJSONObject: self.asObject(), options: prettyPrinted ? .prettyPrinted : [])
+            if let string = String(data: data, encoding: .utf8) {
                 return string
             }
-            throw JSONError.FailedDecoding(data)
+            throw JSONError.failedDecoding(data)
         } catch {
-            throw JSONError.FailedStringify(error)
+            throw JSONError.failedStringify(error)
         }
     }
 

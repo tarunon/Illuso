@@ -14,25 +14,25 @@ public protocol Encodable {
 
 extension Encodable {
     // workaround: We cannot overload class method and global function.
-    public func encode(object: Any?) throws -> JSON {
+    public func encode(_ object: Any?) throws -> JSON {
         return try _encode(object)
     }
     
     // Syntax sugar for Enum
-    public func encode(f: () -> Any?) throws -> JSON {
+    public func encode(_ f: () -> Any?) throws -> JSON {
         return try _encode(f())
     }
 }
 
 extension String: Encodable {
     public func encode() throws -> JSON {
-        return .String(self)
+        return .string(self)
     }
 }
 
 extension Bool: Encodable {
     public func encode() throws -> JSON {
-        return .Bool(self)
+        return .bool(self)
     }
 }
 
@@ -42,7 +42,7 @@ public protocol Number: Encodable {
 
 extension Number {
     public func encode() throws -> JSON {
-        return .Number(self)
+        return .number(self)
     }
 }
 

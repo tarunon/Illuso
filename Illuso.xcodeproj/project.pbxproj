@@ -365,9 +365,11 @@
 				TargetAttributes = {
 					EB1CF1741C3F637E007026D9 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					EB1CF17D1C3F637E007026D9 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					EB1CF1951C3F63EE007026D9 = {
 						CreatedOnToolsVersion = 7.2;
@@ -660,6 +662,7 @@
 				PRODUCT_NAME = Illuso;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -680,6 +683,7 @@
 				PRODUCT_NAME = Illuso;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -695,6 +699,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.IllusoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -708,6 +713,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.IllusoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

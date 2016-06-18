@@ -18,7 +18,7 @@ class EncoderTests: XCTestCase {
                 XCTFail()
                 return
             }
-            XCTAssert(json["null"]!.isKindOfClass(NSNull.self))
+            XCTAssert(json["null"]!.isKind(of: (NSNull.self)))
             XCTAssertEqual(json["string"] as? String, object.string)
             XCTAssertEqual(json["bool"] as? Bool, object.bool)
             XCTAssertEqual(json["int"] as? Int, object.int)
@@ -48,7 +48,7 @@ class EncoderTests: XCTestCase {
         do {
             let object = CustomEncodable()
             
-            guard case .String(let string) = try encode(object) else {
+            guard case .string(let string) = try encode(object) else {
                 XCTFail()
                 return
             }
@@ -113,7 +113,7 @@ class EncoderTests: XCTestCase {
         do {
             _ = try encode(url)
             XCTFail()
-        } catch JSONError.UnsupportedType(let value) {
+        } catch JSONError.unsupportedType(let value) {
             XCTAssertEqual(url, value as? NSURL)
         } catch {
             XCTFail()
@@ -124,7 +124,7 @@ class EncoderTests: XCTestCase {
         let dictionary = [1: 2]
         do {
             _ = try encode(dictionary)
-        } catch JSONError.KeyIsNotString(let key) {
+        } catch JSONError.keyIsNotString(let key) {
             XCTAssertEqual(1, key as? Int)
         } catch {
             XCTFail()
