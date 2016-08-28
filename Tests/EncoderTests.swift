@@ -34,7 +34,7 @@ class EncoderTests: XCTestCase {
             XCTAssertEqual(json["float"] as? Float, object.float)
             XCTAssertEqual(json["double"] as? Double, object.double)
             XCTAssertEqual(json["array"] as! [Int], object.array)
-            XCTAssertEqual(json["anyArray"] as? NSArray, object.anyArray.map { $0 as! AnyObject })
+            XCTAssertEqual(json["anyArray"] as? NSArray, NSArray(array: object.anyArray))
             XCTAssertEqual(json["dictionary"] as! [String: Int], object.dictionary)
             XCTAssertEqual(json["tuple"] as! [Int], [object.tuple.0, object.tuple.1, object.tuple.2])
             XCTAssertEqual(json["optional"] as? Int, object.optional)

@@ -21,15 +21,15 @@ public enum JSON {
         case .null:
             return NSNull()
         case .bool(let bool):
-            return bool
+            return NSNumber(value: bool)
         case .string(let string):
-            return string
+            return NSString(string: string)
         case .number(let number):
             return number.asObject()
         case .array(let array):
-            return array.map { $0.asObject() }
+            return NSArray(array: array.map { $0.asObject() })
         case .dictionary(let dictionary):
-            return convert(dictionary.map { ($0, $1.asObject()) })
+            return NSDictionary(dictionary: convert(dictionary.map { ($0, $1.asObject()) }))
         }
     }
     

@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum JSONError: ErrorProtocol {
+public enum JSONError: Error {
     case unsupportedType(Any)
     case incorrectTopLebel(JSON)
-    case failedDecoding(NSData)
-    case failedStringify(ErrorProtocol)
+    case failedDecoding(Data)
+    case failedStringify(Error)
     case keyIsNotString(Any)
     case unknown
 }
