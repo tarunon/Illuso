@@ -9,11 +9,11 @@ Illuso is JSON encoder for swift.
 let json = try! encode(CGRectZero)
 print(try! json.stringify())
 ```
-Illuso can encode Struct or Swift Class.  
+Illuso can encode struct, class, enum.  
 Any code for encoding is not required in Illuso.  
 
 ## Custom Encoding
-Unfortunately, Enum and some of Objective-C Class (e.g. NSURL, NSDate, UIView ...) is unsupported in Illuso.  
+Unfortunately, some of Objective-C Class (e.g. NSURL, NSDate, UIView ...) is unsupported in Illuso. (returned empty dictionary)  
 If you want to encode these types, can use Encodable protocol.
 ```swift
 extension NSURL: Encodable {

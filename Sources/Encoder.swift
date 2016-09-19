@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal func convert<T>(array: [(String, T)]) -> [String: T] {
+internal func convert<T>(_ array: [(String, T)]) -> [String: T] {
     var dict = [String: T]()
     array.forEach { key, value in
         dict[key] = value
@@ -16,24 +16,24 @@ internal func convert<T>(array: [(String, T)]) -> [String: T] {
     return dict
 }
 
-internal func map(elements: Mirror.Children) throws -> [JSON] {
+internal func map(_ elements: Mirror.Children) throws -> [JSON] {
     return try elements
         .flatMap { key, value in
             try _encode(value)
     }
 }
 
-internal func map(pairs: Mirror.Children) throws -> [String: JSON] {
+internal func map(_ pairs: Mirror.Children) throws -> [String: JSON] {
     return convert(try pairs
         .map { key, value -> (String, JSON) in
-            guard case .Array(let pair) = try _encode(value) else { throw JSONError.Unknown }
-            guard let key = pair[0].asObject() as? String else { throw JSONError.KeyIsNotString(pair[0].asObject()) }
+            guard case .array(let pair) = try _encode(value) else { throw JSONError.unknown }
+            guard let key = pair[0].asObject() as? String else { throw JSONError.keyIsNotString(pair[0].asObject()) }
             return (key, pair[1])
         })
 }
 
-internal func analyze(mirror: Mirror) throws -> [(String, JSON)] {
-    let superclassProperties = try mirror.superclassMirror().map { try analyze($0) } ?? []
+internal func analyze(_ mirror: Mirror) throws -> [(String, JSON)] {
+    let superclassProperties = try mirror.superclassMirror.map { try analyze($0) } ?? []
     let properties = try mirror.children
         .flatMap { key, value in
             key.map { ($0, value) }
@@ -44,9 +44,9 @@ internal func analyze(mirror: Mirror) throws -> [(String, JSON)] {
     return superclassProperties + properties
 }
 
-internal func _encode(object: Any?) throws -> JSON {
+internal func _encode(_ object: Any?) throws -> JSON {
     guard let object = object else {
-        return .Null
+        return .null
     }
     if let json = object as? JSON {
         return json
@@ -56,24 +56,24 @@ internal func _encode(object: Any?) throws -> JSON {
     }
     let mirror = Mirror(reflecting: object)
     switch mirror.displayStyle {
-    case .Some(.Struct), .Some(.Class):
-        return .Dictionary(convert(try analyze(mirror)))
-    case .Some(.Collection), .Some(.Set), .Some(.Tuple):
-        return .Array(try map(mirror.children))
-    case .Some(.Dictionary):
-        return .Dictionary(try map(mirror.children))
-    case .Some(.Optional):
+    case .some(.struct), .some(.class), .some(.enum):
+        return .dictionary(convert(try analyze(mirror)))
+    case .some(.collection), .some(.set), .some(.tuple):
+        return .array(try map(mirror.children))
+    case .some(.dictionary):
+        return .dictionary(try map(mirror.children))
+    case .some(.optional):
         if let some = mirror.children.first {
             return try _encode(some.value)
         }
-        return .Null
+        return .null
     default:
         break
     }
-    throw JSONError.UnsupportedType(object)
+    throw JSONError.unsupportedType(object)
 }
 
 // workaround: We cannot overload class method and global function.
-public func encode(object: Any?) throws -> JSON {
+public func encode(_ object: Any?) throws -> JSON {
     return try _encode(object)
 }

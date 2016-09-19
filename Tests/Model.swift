@@ -9,6 +9,10 @@
 import Foundation
 import Illuso
 
+enum EnumEncodables {
+    case a(Int, String, Float)
+}
+
 struct StandardEncodables {
     let null: Any? = nil
     let string: String = "abc"
@@ -31,6 +35,7 @@ struct StandardEncodables {
     let tuple: (Int, Int, Int) = (1, 2, 3)
     let optional: Int? = 123
     let implicitlyUnwrappedOptional: Int! = 123
+    let _enum = EnumEncodables.a(123, "abc", 1.1)
 }
 
 struct CustomEncodable: Encodable {

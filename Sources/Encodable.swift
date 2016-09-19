@@ -14,25 +14,25 @@ public protocol Encodable {
 
 extension Encodable {
     // workaround: We cannot overload class method and global function.
-    public func encode(object: Any?) throws -> JSON {
+    public func encode(_ object: Any?) throws -> JSON {
         return try _encode(object)
     }
     
     // Syntax sugar for Enum
-    public func encode(f: () -> Any?) throws -> JSON {
+    public func encode(_ f: () -> Any?) throws -> JSON {
         return try _encode(f())
     }
 }
 
 extension String: Encodable {
     public func encode() throws -> JSON {
-        return .String(self)
+        return .string(self)
     }
 }
 
 extension Bool: Encodable {
     public func encode() throws -> JSON {
-        return .Bool(self)
+        return .bool(self)
     }
 }
 
@@ -42,78 +42,89 @@ public protocol Number: Encodable {
 
 extension Number {
     public func encode() throws -> JSON {
-        return .Number(self)
+        return .number(self)
     }
 }
 
 extension Int: Number {
     public func asObject() -> AnyObject {
-        return self
+        return NSNumber(value: self)
     }
 }
 
 extension UInt: Number {
     public func asObject() -> AnyObject {
-        return self
+        return NSNumber(value: self)
     }
 }
 
 extension Float: Number {
     public func asObject() -> AnyObject {
-        return self
+        return NSNumber(value: self)
     }
 }
 
 extension Double: Number {
     public func asObject() -> AnyObject {
-        return self
+        return NSNumber(value: self)
     }
 }
 
 extension Int8: Number {
     public func asObject() -> AnyObject {
-        return Int(self)
+        return NSNumber(value: Int(self))
     }
 }
 
 extension Int16: Number  {
     public func asObject() -> AnyObject {
-        return Int(self)
+        return NSNumber(value: Int(self))
     }
 }
 
 extension Int32: Number  {
     public func asObject() -> AnyObject {
-        return Int(self)
+        return NSNumber(value: Int(self))
     }
 }
 
 extension Int64: Number  {
     public func asObject() -> AnyObject {
-        return Int(self)
+        return NSNumber(value: Int(self))
     }
 }
 
 extension UInt8: Number {
     public func asObject() -> AnyObject {
-        return UInt(self)
+        return NSNumber(value: UInt(self))
     }
 }
 
 extension UInt16: Number {
     public func asObject() -> AnyObject {
-        return UInt(self)
+        return NSNumber(value: UInt(self))
     }
 }
 
 extension UInt32: Number {
     public func asObject() -> AnyObject {
-        return UInt(self)
+        return NSNumber(value: UInt(self))
     }
 }
 
 extension UInt64: Number {
     public func asObject() -> AnyObject {
-        return UInt(self)
+        return NSNumber(value: UInt(self))
+    }
+}
+
+extension ImplicitlyUnwrappedOptional: Encodable {
+    public func encode() throws -> JSON {
+        switch self {
+        case .none:
+            return JSON.null
+        case .some(let value):
+            return try _encode(value)
+        }
     }
 }

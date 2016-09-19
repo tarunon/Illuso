@@ -18,7 +18,7 @@ class EncoderTests: XCTestCase {
                 XCTFail()
                 return
             }
-            XCTAssert(json["null"]!.isKindOfClass(NSNull.self))
+            XCTAssert(json["null"]!.isKind(of: (NSNull.self)))
             XCTAssertEqual(json["string"] as? String, object.string)
             XCTAssertEqual(json["bool"] as? Bool, object.bool)
             XCTAssertEqual(json["int"] as? Int, object.int)
@@ -34,11 +34,15 @@ class EncoderTests: XCTestCase {
             XCTAssertEqual(json["float"] as? Float, object.float)
             XCTAssertEqual(json["double"] as? Double, object.double)
             XCTAssertEqual(json["array"] as! [Int], object.array)
-            XCTAssertEqual(json["anyArray"] as? NSArray, object.anyArray.map { $0 as! AnyObject })
+            XCTAssertEqual(json["anyArray"] as? NSArray, NSArray(array: object.anyArray))
             XCTAssertEqual(json["dictionary"] as! [String: Int], object.dictionary)
             XCTAssertEqual(json["tuple"] as! [Int], [object.tuple.0, object.tuple.1, object.tuple.2])
             XCTAssertEqual(json["optional"] as? Int, object.optional)
             XCTAssertEqual(json["implicitlyUnwrappedOptional"] as? Int, object.implicitlyUnwrappedOptional)
+            let enumValues = (json["_enum"] as? NSDictionary)?["a"] as? NSArray
+            XCTAssertEqual(enumValues?[0] as? Int, 123)
+            XCTAssertEqual(enumValues?[1] as? String, "abc")
+            XCTAssertEqual(enumValues?[2] as? Float, 1.1)
         } catch {
             XCTFail()
         }
@@ -48,7 +52,7 @@ class EncoderTests: XCTestCase {
         do {
             let object = CustomEncodable()
             
-            guard case .String(let string) = try encode(object) else {
+            guard case .string(let string) = try encode(object) else {
                 XCTFail()
                 return
             }
@@ -108,23 +112,11 @@ class EncoderTests: XCTestCase {
         }
     }
     
-    func testFailureUnsupportedType() {
-        let url = NSURL(string: "http://a.b")
-        do {
-            _ = try encode(url)
-            XCTFail()
-        } catch JSONError.UnsupportedType(let value) {
-            XCTAssertEqual(url, value as? NSURL)
-        } catch {
-            XCTFail()
-        }
-    }
-    
     func testFailureKeyIsNotString() {
         let dictionary = [1: 2]
         do {
             _ = try encode(dictionary)
-        } catch JSONError.KeyIsNotString(let key) {
+        } catch JSONError.keyIsNotString(let key) {
             XCTAssertEqual(1, key as? Int)
         } catch {
             XCTFail()
