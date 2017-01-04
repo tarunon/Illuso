@@ -17,6 +17,11 @@ extension Encodable {
     public func encode(_ object: Any?) throws -> JSON {
         return try _encode(object)
     }
+
+    // workaround: Escape swift compiler warnigns: `Expression implicitly coerced from 'String?' to Any`
+    public func encode(dictionary: [String: Any?]) throws -> JSON {
+        return try _encode(dictionary)
+    }
     
     // Syntax sugar for Enum
     public func encode(_ f: () -> Any?) throws -> JSON {
