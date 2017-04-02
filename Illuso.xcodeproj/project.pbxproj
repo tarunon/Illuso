@@ -35,6 +35,7 @@
 		D2601EBC1E90D668009951C6 /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentable.swift; sourceTree = "<group>"; };
 		D2601EC21E90DA8A009951C6 /* EncoderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncoderTests.swift; sourceTree = "<group>"; };
 		D2601EC31E90DA8A009951C6 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D2601EC81E90DE15009951C6 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_14 /* IllusoTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = IllusoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -78,7 +79,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -86,7 +87,6 @@
 				OBJ_9 /* Tests */,
 				OBJ_12 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -104,6 +104,7 @@
 		OBJ_9 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D2601EC81E90DE15009951C6 /* LinuxMain.swift */,
 				OBJ_10 /* IllusoTests */,
 			);
 			name = Tests;
@@ -160,7 +161,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
