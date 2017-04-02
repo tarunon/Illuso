@@ -6,8 +6,6 @@
 //  Copyright © 2016年 tarunon. All rights reserved.
 //
 
-import Foundation
-
 public protocol Encodable {
     func encode() throws -> JSON
 }
@@ -37,7 +35,7 @@ extension Bool: Encodable {
 }
 
 public protocol Number: Encodable {
-    func asObject() -> AnyObject
+    
 }
 
 extension Number {
@@ -47,75 +45,51 @@ extension Number {
 }
 
 extension Int: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: self)
-    }
+
 }
 
 extension UInt: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: self)
-    }
+
 }
 
 extension Float: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: self)
-    }
+
 }
 
 extension Double: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: self)
-    }
+
 }
 
 extension Int8: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: Int(self))
-    }
+
 }
 
 extension Int16: Number  {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: Int(self))
-    }
+
 }
 
 extension Int32: Number  {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: Int(self))
-    }
+
 }
 
 extension Int64: Number  {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: Int(self))
-    }
+
 }
 
 extension UInt8: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: UInt(self))
-    }
+
 }
 
 extension UInt16: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: UInt(self))
-    }
+
 }
 
 extension UInt32: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: UInt(self))
-    }
+
 }
 
 extension UInt64: Number {
-    public func asObject() -> AnyObject {
-        return NSNumber(value: UInt(self))
-    }
+
 }
 
 extension ImplicitlyUnwrappedOptional: Encodable {
