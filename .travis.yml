@@ -2,10 +2,7 @@ matrix:
   include:
     - os: osx
       language: objective-c
-      osx_image: xcode8
-script:
-  - set -o pipefail
-  - xcodebuild test -scheme Illuso-Mac -configuration Debug | xcpretty -c
-  - xcodebuild test -scheme Illuso-iOS -configuration Debug -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6s" | xcpretty -c
-  - xcodebuild test -scheme Illuso-tvOS -configuration Debug -sdk appletvsimulator -destination "platform=tvOS Simulator,name=Apple TV 1080p" | xcpretty -c
-  - xcodebuild build -scheme Illuso-watchOS -configuration Debug -sdk watchsimulator -destination "platform=watchOS Simulator,name=Apple Watch - 38mm" | xcpretty -c
+      osx_image: xcode8.3
+      script:
+        - swift build
+        - swift test

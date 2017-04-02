@@ -6,7 +6,7 @@
 //  Copyright © 2016年 tarunon. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 
 public extension RawRepresentable where Self: Encodable {
     func encode() throws -> JSON {

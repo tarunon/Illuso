@@ -7,979 +7,355 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB1A89D51C77114F000C985C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A89D41C77114F000C985C /* RawRepresentable.swift */; };
-		EB1A89D61C77114F000C985C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A89D41C77114F000C985C /* RawRepresentable.swift */; };
-		EB1A89D71C77114F000C985C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A89D41C77114F000C985C /* RawRepresentable.swift */; };
-		EB1A89D81C77114F000C985C /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1A89D41C77114F000C985C /* RawRepresentable.swift */; };
-		EB1CF17F1C3F637E007026D9 /* Illuso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CF1751C3F637E007026D9 /* Illuso.framework */; };
-		EB1CF18C1C3F6390007026D9 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1621C3F61FE007026D9 /* Encodable.swift */; };
-		EB1CF18D1C3F6390007026D9 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1631C3F61FE007026D9 /* Encoder.swift */; };
-		EB1CF18E1C3F6390007026D9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1641C3F61FE007026D9 /* Error.swift */; };
-		EB1CF18F1C3F6390007026D9 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1651C3F61FE007026D9 /* JSON.swift */; };
-		EB1CF1901C3F6395007026D9 /* Illuso.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CF15E1C3F61EA007026D9 /* Illuso.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB1CF1A01C3F63EE007026D9 /* Illuso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CF1961C3F63EE007026D9 /* Illuso.framework */; };
-		EB1CF1AD1C3F641A007026D9 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1621C3F61FE007026D9 /* Encodable.swift */; };
-		EB1CF1AE1C3F641A007026D9 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1631C3F61FE007026D9 /* Encoder.swift */; };
-		EB1CF1AF1C3F641A007026D9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1641C3F61FE007026D9 /* Error.swift */; };
-		EB1CF1B01C3F641A007026D9 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1651C3F61FE007026D9 /* JSON.swift */; };
-		EB1CF1B11C3F641E007026D9 /* Illuso.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CF15E1C3F61EA007026D9 /* Illuso.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB1CF1C11C3F642E007026D9 /* Illuso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB1CF1B71C3F642E007026D9 /* Illuso.framework */; };
-		EB1CF1CE1C3F644A007026D9 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1621C3F61FE007026D9 /* Encodable.swift */; };
-		EB1CF1CF1C3F644A007026D9 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1631C3F61FE007026D9 /* Encoder.swift */; };
-		EB1CF1D01C3F644A007026D9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1641C3F61FE007026D9 /* Error.swift */; };
-		EB1CF1D11C3F644A007026D9 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1651C3F61FE007026D9 /* JSON.swift */; };
-		EB1CF1D21C3F644E007026D9 /* Illuso.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CF15E1C3F61EA007026D9 /* Illuso.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB1CF1D31C3F6469007026D9 /* EncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF16C1C3F6223007026D9 /* EncoderTests.swift */; };
-		EB1CF1D41C3F6469007026D9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF16D1C3F6223007026D9 /* Model.swift */; };
-		EB1CF1D51C3F646C007026D9 /* EncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF16C1C3F6223007026D9 /* EncoderTests.swift */; };
-		EB1CF1D61C3F646C007026D9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF16D1C3F6223007026D9 /* Model.swift */; };
-		EB1CF1D71C3F646E007026D9 /* EncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF16C1C3F6223007026D9 /* EncoderTests.swift */; };
-		EB1CF1D81C3F646E007026D9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF16D1C3F6223007026D9 /* Model.swift */; };
-		EB1CF1E61C3F64C8007026D9 /* Illuso.h in Headers */ = {isa = PBXBuildFile; fileRef = EB1CF15E1C3F61EA007026D9 /* Illuso.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB1CF1E71C3F64CE007026D9 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1621C3F61FE007026D9 /* Encodable.swift */; };
-		EB1CF1E81C3F64CE007026D9 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1631C3F61FE007026D9 /* Encoder.swift */; };
-		EB1CF1E91C3F64CE007026D9 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1641C3F61FE007026D9 /* Error.swift */; };
-		EB1CF1EA1C3F64CE007026D9 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CF1651C3F61FE007026D9 /* JSON.swift */; };
+		D2601EBD1E90D668009951C6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EB81E90D668009951C6 /* Encodable.swift */; };
+		D2601EBE1E90D668009951C6 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EB91E90D668009951C6 /* Encoder.swift */; };
+		D2601EBF1E90D668009951C6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EBA1E90D668009951C6 /* Error.swift */; };
+		D2601EC01E90D668009951C6 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EBB1E90D668009951C6 /* JSON.swift */; };
+		D2601EC11E90D668009951C6 /* RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EBC1E90D668009951C6 /* RawRepresentable.swift */; };
+		D2601EC61E90DA92009951C6 /* EncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EC21E90DA8A009951C6 /* EncoderTests.swift */; };
+		D2601EC71E90DA96009951C6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EC31E90DA8A009951C6 /* Model.swift */; };
+		OBJ_29 /* Illuso.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Illuso.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EB1CF1801C3F637E007026D9 /* PBXContainerItemProxy */ = {
+		D2601EB71E90D633009951C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = EB1CF1371C3F610D007026D9 /* Project object */;
+			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EB1CF1741C3F637E007026D9;
-			remoteInfo = Illuso;
-		};
-		EB1CF1A11C3F63EE007026D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EB1CF1371C3F610D007026D9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EB1CF1951C3F63EE007026D9;
-			remoteInfo = Illuso;
-		};
-		EB1CF1C21C3F642E007026D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EB1CF1371C3F610D007026D9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EB1CF1B61C3F642E007026D9;
+			remoteGlobalIDString = OBJ_15;
 			remoteInfo = Illuso;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EB1A89D41C77114F000C985C /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawRepresentable.swift; path = Sources/RawRepresentable.swift; sourceTree = "<group>"; };
-		EB1CF15E1C3F61EA007026D9 /* Illuso.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Illuso.h; path = Sources/Illuso.h; sourceTree = "<group>"; };
-		EB1CF15F1C3F61EA007026D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
-		EB1CF1621C3F61FE007026D9 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encodable.swift; path = Sources/Encodable.swift; sourceTree = "<group>"; };
-		EB1CF1631C3F61FE007026D9 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Encoder.swift; path = Sources/Encoder.swift; sourceTree = "<group>"; };
-		EB1CF1641C3F61FE007026D9 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
-		EB1CF1651C3F61FE007026D9 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSON.swift; path = Sources/JSON.swift; sourceTree = "<group>"; };
-		EB1CF16A1C3F620D007026D9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
-		EB1CF16C1C3F6223007026D9 /* EncoderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncoderTests.swift; path = Tests/EncoderTests.swift; sourceTree = "<group>"; };
-		EB1CF16D1C3F6223007026D9 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = Tests/Model.swift; sourceTree = "<group>"; };
-		EB1CF1751C3F637E007026D9 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB1CF17E1C3F637E007026D9 /* IllusoTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IllusoTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB1CF1961C3F63EE007026D9 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB1CF19F1C3F63EE007026D9 /* IllusoTests-Mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IllusoTests-Mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB1CF1B71C3F642E007026D9 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB1CF1C01C3F642E007026D9 /* IllusoTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IllusoTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB1CF1DE1C3F64B7007026D9 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2601EB81E90D668009951C6 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		D2601EB91E90D668009951C6 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
+		D2601EBA1E90D668009951C6 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		D2601EBB1E90D668009951C6 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		D2601EBC1E90D668009951C6 /* RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawRepresentable.swift; sourceTree = "<group>"; };
+		D2601EC21E90DA8A009951C6 /* EncoderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncoderTests.swift; sourceTree = "<group>"; };
+		D2601EC31E90DA8A009951C6 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D2601EC81E90DE15009951C6 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
+		OBJ_13 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_14 /* IllusoTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = IllusoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EB1CF1711C3F637E007026D9 /* Frameworks */ = {
+		OBJ_21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB1CF17B1C3F637E007026D9 /* Frameworks */ = {
+		OBJ_28 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				EB1CF17F1C3F637E007026D9 /* Illuso.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1921C3F63EE007026D9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF19C1C3F63EE007026D9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1A01C3F63EE007026D9 /* Illuso.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1B31C3F642E007026D9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1BD1C3F642E007026D9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1C11C3F642E007026D9 /* Illuso.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1DA1C3F64B7007026D9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				OBJ_29 /* Illuso.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB1CF1361C3F610D007026D9 = {
+		OBJ_10 /* IllusoTests */ = {
 			isa = PBXGroup;
 			children = (
-				EB1CF15C1C3F618B007026D9 /* Sources */,
-				EB1CF15D1C3F6190007026D9 /* Tests */,
-				EB1CF1411C3F610D007026D9 /* Products */,
+				D2601EC21E90DA8A009951C6 /* EncoderTests.swift */,
+				D2601EC31E90DA8A009951C6 /* Model.swift */,
 			);
-			sourceTree = "<group>";
+			name = IllusoTests;
+			path = Tests/IllusoTests;
+			sourceTree = SOURCE_ROOT;
 		};
-		EB1CF1411C3F610D007026D9 /* Products */ = {
+		OBJ_12 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EB1CF1751C3F637E007026D9 /* Illuso.framework */,
-				EB1CF17E1C3F637E007026D9 /* IllusoTests-iOS.xctest */,
-				EB1CF1961C3F63EE007026D9 /* Illuso.framework */,
-				EB1CF19F1C3F63EE007026D9 /* IllusoTests-Mac.xctest */,
-				EB1CF1B71C3F642E007026D9 /* Illuso.framework */,
-				EB1CF1C01C3F642E007026D9 /* IllusoTests-tvOS.xctest */,
-				EB1CF1DE1C3F64B7007026D9 /* Illuso.framework */,
+				OBJ_13 /* Illuso.framework */,
+				OBJ_14 /* IllusoTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
+			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		EB1CF15C1C3F618B007026D9 /* Sources */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				EB1CF1621C3F61FE007026D9 /* Encodable.swift */,
-				EB1CF1631C3F61FE007026D9 /* Encoder.swift */,
-				EB1CF1641C3F61FE007026D9 /* Error.swift */,
-				EB1CF1651C3F61FE007026D9 /* JSON.swift */,
-				EB1A89D41C77114F000C985C /* RawRepresentable.swift */,
-				EB1CF15E1C3F61EA007026D9 /* Illuso.h */,
-				EB1CF15F1C3F61EA007026D9 /* Info.plist */,
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_9 /* Tests */,
+				OBJ_12 /* Products */,
 			);
-			name = Sources;
 			sourceTree = "<group>";
 		};
-		EB1CF15D1C3F6190007026D9 /* Tests */ = {
+		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				EB1CF16C1C3F6223007026D9 /* EncoderTests.swift */,
-				EB1CF16D1C3F6223007026D9 /* Model.swift */,
-				EB1CF16A1C3F620D007026D9 /* Info.plist */,
+				D2601EB81E90D668009951C6 /* Encodable.swift */,
+				D2601EB91E90D668009951C6 /* Encoder.swift */,
+				D2601EBA1E90D668009951C6 /* Error.swift */,
+				D2601EBB1E90D668009951C6 /* JSON.swift */,
+				D2601EBC1E90D668009951C6 /* RawRepresentable.swift */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D2601EC81E90DE15009951C6 /* LinuxMain.swift */,
+				OBJ_10 /* IllusoTests */,
 			);
 			name = Tests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		EB1CF1721C3F637E007026D9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1901C3F6395007026D9 /* Illuso.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1931C3F63EE007026D9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1B11C3F641E007026D9 /* Illuso.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1B41C3F642E007026D9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1D21C3F644E007026D9 /* Illuso.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1DB1C3F64B7007026D9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1E61C3F64C8007026D9 /* Illuso.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		EB1CF1741C3F637E007026D9 /* Illuso-iOS */ = {
+		OBJ_15 /* Illuso */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB1CF1861C3F637E007026D9 /* Build configuration list for PBXNativeTarget "Illuso-iOS" */;
+			buildConfigurationList = OBJ_16 /* Build configuration list for PBXNativeTarget "Illuso" */;
 			buildPhases = (
-				EB1CF1701C3F637E007026D9 /* Sources */,
-				EB1CF1711C3F637E007026D9 /* Frameworks */,
-				EB1CF1721C3F637E007026D9 /* Headers */,
-				EB1CF1731C3F637E007026D9 /* Resources */,
+				OBJ_19 /* Sources */,
+				OBJ_21 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Illuso-iOS";
+			name = Illuso;
 			productName = Illuso;
-			productReference = EB1CF1751C3F637E007026D9 /* Illuso.framework */;
+			productReference = OBJ_13 /* Illuso.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		EB1CF17D1C3F637E007026D9 /* IllusoTests-iOS */ = {
+		OBJ_22 /* IllusoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EB1CF1891C3F637E007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-iOS" */;
+			buildConfigurationList = OBJ_23 /* Build configuration list for PBXNativeTarget "IllusoTests" */;
 			buildPhases = (
-				EB1CF17A1C3F637E007026D9 /* Sources */,
-				EB1CF17B1C3F637E007026D9 /* Frameworks */,
-				EB1CF17C1C3F637E007026D9 /* Resources */,
+				OBJ_26 /* Sources */,
+				OBJ_28 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EB1CF1811C3F637E007026D9 /* PBXTargetDependency */,
+				OBJ_30 /* PBXTargetDependency */,
 			);
-			name = "IllusoTests-iOS";
+			name = IllusoTests;
 			productName = IllusoTests;
-			productReference = EB1CF17E1C3F637E007026D9 /* IllusoTests-iOS.xctest */;
+			productReference = OBJ_14 /* IllusoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		EB1CF1951C3F63EE007026D9 /* Illuso-Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB1CF1A71C3F63EE007026D9 /* Build configuration list for PBXNativeTarget "Illuso-Mac" */;
-			buildPhases = (
-				EB1CF1911C3F63EE007026D9 /* Sources */,
-				EB1CF1921C3F63EE007026D9 /* Frameworks */,
-				EB1CF1931C3F63EE007026D9 /* Headers */,
-				EB1CF1941C3F63EE007026D9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Illuso-Mac";
-			productName = Illuso;
-			productReference = EB1CF1961C3F63EE007026D9 /* Illuso.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EB1CF19E1C3F63EE007026D9 /* IllusoTests-Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB1CF1AA1C3F63EE007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-Mac" */;
-			buildPhases = (
-				EB1CF19B1C3F63EE007026D9 /* Sources */,
-				EB1CF19C1C3F63EE007026D9 /* Frameworks */,
-				EB1CF19D1C3F63EE007026D9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EB1CF1A21C3F63EE007026D9 /* PBXTargetDependency */,
-			);
-			name = "IllusoTests-Mac";
-			productName = IllusoTests;
-			productReference = EB1CF19F1C3F63EE007026D9 /* IllusoTests-Mac.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		EB1CF1B61C3F642E007026D9 /* Illuso-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB1CF1C81C3F642E007026D9 /* Build configuration list for PBXNativeTarget "Illuso-tvOS" */;
-			buildPhases = (
-				EB1CF1B21C3F642E007026D9 /* Sources */,
-				EB1CF1B31C3F642E007026D9 /* Frameworks */,
-				EB1CF1B41C3F642E007026D9 /* Headers */,
-				EB1CF1B51C3F642E007026D9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Illuso-tvOS";
-			productName = Illuso;
-			productReference = EB1CF1B71C3F642E007026D9 /* Illuso.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EB1CF1BF1C3F642E007026D9 /* IllusoTests-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB1CF1CB1C3F642E007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-tvOS" */;
-			buildPhases = (
-				EB1CF1BC1C3F642E007026D9 /* Sources */,
-				EB1CF1BD1C3F642E007026D9 /* Frameworks */,
-				EB1CF1BE1C3F642E007026D9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EB1CF1C31C3F642E007026D9 /* PBXTargetDependency */,
-			);
-			name = "IllusoTests-tvOS";
-			productName = IllusoTests;
-			productReference = EB1CF1C01C3F642E007026D9 /* IllusoTests-tvOS.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		EB1CF1DD1C3F64B7007026D9 /* Illuso-watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EB1CF1E31C3F64B7007026D9 /* Build configuration list for PBXNativeTarget "Illuso-watchOS" */;
-			buildPhases = (
-				EB1CF1D91C3F64B7007026D9 /* Sources */,
-				EB1CF1DA1C3F64B7007026D9 /* Frameworks */,
-				EB1CF1DB1C3F64B7007026D9 /* Headers */,
-				EB1CF1DC1C3F64B7007026D9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Illuso-watchOS";
-			productName = Illuso;
-			productReference = EB1CF1DE1C3F64B7007026D9 /* Illuso.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EB1CF1371C3F610D007026D9 /* Project object */ = {
+		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = tarunon;
-				TargetAttributes = {
-					EB1CF1741C3F637E007026D9 = {
-						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
-					};
-					EB1CF17D1C3F637E007026D9 = {
-						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
-					};
-					EB1CF1951C3F63EE007026D9 = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					EB1CF19E1C3F63EE007026D9 = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					EB1CF1B61C3F642E007026D9 = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					EB1CF1BF1C3F642E007026D9 = {
-						CreatedOnToolsVersion = 7.2;
-					};
-					EB1CF1DD1C3F64B7007026D9 = {
-						CreatedOnToolsVersion = 7.2;
-					};
-				};
+				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = EB1CF13A1C3F610D007026D9 /* Build configuration list for PBXProject "Illuso" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Illuso" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = EB1CF1361C3F610D007026D9;
-			productRefGroup = EB1CF1411C3F610D007026D9 /* Products */;
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EB1CF1741C3F637E007026D9 /* Illuso-iOS */,
-				EB1CF17D1C3F637E007026D9 /* IllusoTests-iOS */,
-				EB1CF1951C3F63EE007026D9 /* Illuso-Mac */,
-				EB1CF19E1C3F63EE007026D9 /* IllusoTests-Mac */,
-				EB1CF1B61C3F642E007026D9 /* Illuso-tvOS */,
-				EB1CF1BF1C3F642E007026D9 /* IllusoTests-tvOS */,
-				EB1CF1DD1C3F64B7007026D9 /* Illuso-watchOS */,
+				OBJ_15 /* Illuso */,
+				OBJ_22 /* IllusoTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		EB1CF1731C3F637E007026D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF17C1C3F637E007026D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1941C3F63EE007026D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF19D1C3F63EE007026D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1B51C3F642E007026D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1BE1C3F642E007026D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1DC1C3F64B7007026D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		EB1CF1701C3F637E007026D9 /* Sources */ = {
+		OBJ_19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				EB1CF18C1C3F6390007026D9 /* Encodable.swift in Sources */,
-				EB1CF18D1C3F6390007026D9 /* Encoder.swift in Sources */,
-				EB1A89D51C77114F000C985C /* RawRepresentable.swift in Sources */,
-				EB1CF18E1C3F6390007026D9 /* Error.swift in Sources */,
-				EB1CF18F1C3F6390007026D9 /* JSON.swift in Sources */,
+				D2601EBF1E90D668009951C6 /* Error.swift in Sources */,
+				D2601EC01E90D668009951C6 /* JSON.swift in Sources */,
+				D2601EC11E90D668009951C6 /* RawRepresentable.swift in Sources */,
+				D2601EBD1E90D668009951C6 /* Encodable.swift in Sources */,
+				D2601EBE1E90D668009951C6 /* Encoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB1CF17A1C3F637E007026D9 /* Sources */ = {
+		OBJ_26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				EB1CF1D31C3F6469007026D9 /* EncoderTests.swift in Sources */,
-				EB1CF1D41C3F6469007026D9 /* Model.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1911C3F63EE007026D9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1AD1C3F641A007026D9 /* Encodable.swift in Sources */,
-				EB1CF1AE1C3F641A007026D9 /* Encoder.swift in Sources */,
-				EB1A89D61C77114F000C985C /* RawRepresentable.swift in Sources */,
-				EB1CF1AF1C3F641A007026D9 /* Error.swift in Sources */,
-				EB1CF1B01C3F641A007026D9 /* JSON.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF19B1C3F63EE007026D9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1D51C3F646C007026D9 /* EncoderTests.swift in Sources */,
-				EB1CF1D61C3F646C007026D9 /* Model.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1B21C3F642E007026D9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1CE1C3F644A007026D9 /* Encodable.swift in Sources */,
-				EB1CF1CF1C3F644A007026D9 /* Encoder.swift in Sources */,
-				EB1A89D71C77114F000C985C /* RawRepresentable.swift in Sources */,
-				EB1CF1D01C3F644A007026D9 /* Error.swift in Sources */,
-				EB1CF1D11C3F644A007026D9 /* JSON.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1BC1C3F642E007026D9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1D71C3F646E007026D9 /* EncoderTests.swift in Sources */,
-				EB1CF1D81C3F646E007026D9 /* Model.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EB1CF1D91C3F64B7007026D9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EB1CF1E71C3F64CE007026D9 /* Encodable.swift in Sources */,
-				EB1CF1E81C3F64CE007026D9 /* Encoder.swift in Sources */,
-				EB1A89D81C77114F000C985C /* RawRepresentable.swift in Sources */,
-				EB1CF1E91C3F64CE007026D9 /* Error.swift in Sources */,
-				EB1CF1EA1C3F64CE007026D9 /* JSON.swift in Sources */,
+				D2601EC61E90DA92009951C6 /* EncoderTests.swift in Sources */,
+				D2601EC71E90DA96009951C6 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EB1CF1811C3F637E007026D9 /* PBXTargetDependency */ = {
+		OBJ_30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EB1CF1741C3F637E007026D9 /* Illuso-iOS */;
-			targetProxy = EB1CF1801C3F637E007026D9 /* PBXContainerItemProxy */;
-		};
-		EB1CF1A21C3F63EE007026D9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EB1CF1951C3F63EE007026D9 /* Illuso-Mac */;
-			targetProxy = EB1CF1A11C3F63EE007026D9 /* PBXContainerItemProxy */;
-		};
-		EB1CF1C31C3F642E007026D9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EB1CF1B61C3F642E007026D9 /* Illuso-tvOS */;
-			targetProxy = EB1CF1C21C3F642E007026D9 /* PBXContainerItemProxy */;
+			target = OBJ_15 /* Illuso */;
+			targetProxy = D2601EB71E90D633009951C6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		EB1CF1521C3F610D007026D9 /* Debug */ = {
+		OBJ_17 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Illuso.xcodeproj/Illuso_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Illuso;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = Illuso;
 			};
 			name = Debug;
 		};
-		EB1CF1531C3F610D007026D9 /* Release */ = {
+		OBJ_18 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Illuso.xcodeproj/Illuso_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Illuso;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGET_NAME = Illuso;
+			};
+			name = Release;
+		};
+		OBJ_24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Illuso.xcodeproj/IllusoTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = IllusoTests;
+			};
+			name = Debug;
+		};
+		OBJ_25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Illuso.xcodeproj/IllusoTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = IllusoTests;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		EB1CF1871C3F637E007026D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.Illuso;
-				PRODUCT_NAME = Illuso;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		EB1CF1881C3F637E007026D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.Illuso;
-				PRODUCT_NAME = Illuso;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		EB1CF18A1C3F637E007026D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.IllusoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		EB1CF18B1C3F637E007026D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.IllusoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_VERSION = 3.0;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		EB1CF1A81C3F63EE007026D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.Illuso;
-				PRODUCT_NAME = Illuso;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		EB1CF1A91C3F63EE007026D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.Illuso;
-				PRODUCT_NAME = Illuso;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		EB1CF1AB1C3F63EE007026D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.IllusoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		EB1CF1AC1C3F63EE007026D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.IllusoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		EB1CF1C91C3F642E007026D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.Illuso;
-				PRODUCT_NAME = Illuso;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Debug;
-		};
-		EB1CF1CA1C3F642E007026D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.Illuso;
-				PRODUCT_NAME = Illuso;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		EB1CF1CC1C3F642E007026D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.IllusoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 3.0;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
-			};
-			name = Debug;
-		};
-		EB1CF1CD1C3F642E007026D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.IllusoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				SWIFT_VERSION = 3.0;
-				TVOS_DEPLOYMENT_TARGET = 9.1;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		EB1CF1E41C3F64B7007026D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.Illuso;
-				PRODUCT_NAME = Illuso;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
-			};
-			name = Debug;
-		};
-		EB1CF1E51C3F64B7007026D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tarunon.Illuso;
-				PRODUCT_NAME = Illuso;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EB1CF13A1C3F610D007026D9 /* Build configuration list for PBXProject "Illuso" */ = {
+		OBJ_16 /* Build configuration list for PBXNativeTarget "Illuso" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EB1CF1521C3F610D007026D9 /* Debug */,
-				EB1CF1531C3F610D007026D9 /* Release */,
+				OBJ_17 /* Debug */,
+				OBJ_18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		EB1CF1861C3F637E007026D9 /* Build configuration list for PBXNativeTarget "Illuso-iOS" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "Illuso" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EB1CF1871C3F637E007026D9 /* Debug */,
-				EB1CF1881C3F637E007026D9 /* Release */,
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		EB1CF1891C3F637E007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-iOS" */ = {
+		OBJ_23 /* Build configuration list for PBXNativeTarget "IllusoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EB1CF18A1C3F637E007026D9 /* Debug */,
-				EB1CF18B1C3F637E007026D9 /* Release */,
+				OBJ_24 /* Debug */,
+				OBJ_25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB1CF1A71C3F63EE007026D9 /* Build configuration list for PBXNativeTarget "Illuso-Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB1CF1A81C3F63EE007026D9 /* Debug */,
-				EB1CF1A91C3F63EE007026D9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB1CF1AA1C3F63EE007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB1CF1AB1C3F63EE007026D9 /* Debug */,
-				EB1CF1AC1C3F63EE007026D9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB1CF1C81C3F642E007026D9 /* Build configuration list for PBXNativeTarget "Illuso-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB1CF1C91C3F642E007026D9 /* Debug */,
-				EB1CF1CA1C3F642E007026D9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB1CF1CB1C3F642E007026D9 /* Build configuration list for PBXNativeTarget "IllusoTests-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB1CF1CC1C3F642E007026D9 /* Debug */,
-				EB1CF1CD1C3F642E007026D9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EB1CF1E31C3F64B7007026D9 /* Build configuration list for PBXNativeTarget "Illuso-watchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EB1CF1E41C3F64B7007026D9 /* Debug */,
-				EB1CF1E51C3F64B7007026D9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = EB1CF1371C3F610D007026D9 /* Project object */;
+	rootObject = OBJ_1 /* Project object */;
 }

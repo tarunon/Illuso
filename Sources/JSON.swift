@@ -6,34 +6,32 @@
 //  Copyright © 2016年 tarunon. All rights reserved.
 //
 
-import Foundation
-
 public enum JSON {
     case null
-    case bool(Swift.Bool)
-    case string(Swift.String)
-    case number(Illuso.Number)
+    case bool(Bool)
+    case string(String)
+    case number(Number)
     case array([JSON])
-    case dictionary([Swift.String: JSON])
+    case dictionary([String: JSON])
     
     public func asObject() -> AnyObject {
         switch self {
         case .null:
-            return NSNull()
+            return Any?.none as AnyObject
         case .bool(let bool):
-            return NSNumber(value: bool)
+            return bool as AnyObject
         case .string(let string):
-            return NSString(string: string)
+            return string as AnyObject
         case .number(let number):
-            return number.asObject()
+            return number as AnyObject
         case .array(let array):
-            return NSArray(array: array.map { $0.asObject() })
+            return array.map { $0.asObject() } as AnyObject
         case .dictionary(let dictionary):
-            return NSDictionary(dictionary: convert(dictionary.map { ($0, $1.asObject()) }))
+            return convert(dictionary.map { ($0, $1.asObject()) }) as AnyObject
         }
     }
     
-    internal func isNested() -> Swift.Bool {
+    internal func isNested() -> Bool {
         switch self {
         case .array(_), .dictionary(_):
             return true
@@ -41,8 +39,12 @@ public enum JSON {
             return false
         }
     }
-    
-    public func stringify(prettyPrinted: Swift.Bool = false) throws -> Swift.String {
+}
+
+import Foundation
+
+public extension JSON {
+    public func stringify(prettyPrinted: Bool = false) throws -> String {
         guard self.isNested() else {
             throw JSONError.incorrectTopLebel(self)
         }
@@ -56,5 +58,4 @@ public enum JSON {
             throw JSONError.failedStringify(error)
         }
     }
-
 }

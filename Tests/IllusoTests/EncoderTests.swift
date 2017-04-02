@@ -22,15 +22,15 @@ class EncoderTests: XCTestCase {
             XCTAssertEqual(json["string"] as? String, object.string)
             XCTAssertEqual(json["bool"] as? Bool, object.bool)
             XCTAssertEqual(json["int"] as? Int, object.int)
-            XCTAssertEqual(Int8(json["int8"] as! Int), object.int8)
-            XCTAssertEqual(Int16(json["int16"] as! Int), object.int16)
-            XCTAssertEqual(Int32(json["int32"] as! Int), object.int32)
-            XCTAssertEqual(Int64(json["int64"] as! Int), object.int64)
+            XCTAssertEqual(Int8(json["int8"] as! Int8), object.int8)
+            XCTAssertEqual(Int16(json["int16"] as! Int16), object.int16)
+            XCTAssertEqual(Int32(json["int32"] as! Int32), object.int32)
+            XCTAssertEqual(Int64(json["int64"] as! Int64), object.int64)
             XCTAssertEqual(json["uint"] as? UInt, object.uint)
-            XCTAssertEqual(UInt8(json["uint8"] as! UInt), object.uint8)
-            XCTAssertEqual(UInt16(json["uint16"] as! UInt), object.uint16)
-            XCTAssertEqual(UInt32(json["uint32"] as! UInt), object.uint32)
-            XCTAssertEqual(UInt64(json["uint64"] as! UInt), object.uint64)
+            XCTAssertEqual(UInt8(json["uint8"] as! UInt8), object.uint8)
+            XCTAssertEqual(UInt16(json["uint16"] as! UInt16), object.uint16)
+            XCTAssertEqual(UInt32(json["uint32"] as! UInt32), object.uint32)
+            XCTAssertEqual(UInt64(json["uint64"] as! UInt64), object.uint64)
             XCTAssertEqual(json["float"] as? Float, object.float)
             XCTAssertEqual(json["double"] as? Double, object.double)
             XCTAssertEqual(json["array"] as! [Int], object.array)
@@ -121,5 +121,16 @@ class EncoderTests: XCTestCase {
         } catch {
             XCTFail()
         }
+    }
+    
+    static var allTests : [(String, (EncoderTests) -> () throws -> Void)] {
+        return [
+            ("testStandardEncodable", testStandardEncodable),
+            ("testCustomEncodable", testCustomEncodable),
+            ("testSubclassEncode", testSubclassEncode),
+            ("testRawRepresentable", testRawRepresentable),
+            ("testStringify", testStringify),
+            ("testFailureKeyIsNotString", testFailureKeyIsNotString)
+        ]
     }
 }
