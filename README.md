@@ -1,6 +1,7 @@
 # Illuso
 [![Build Status](https://travis-ci.org/tarunon/Illuso.svg?branch=master)](https://travis-ci.org/tarunon/Illuso)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
 
 Illuso is JSON encoder for swift.
 
@@ -16,7 +17,7 @@ Any code for encoding is not required in Illuso.
 Unfortunately, some of Objective-C Class (e.g. NSURL, NSDate, UIView ...) is unsupported in Illuso. (returned empty dictionary)  
 If you want to encode these types, can use Encodable protocol.
 ```swift
-extension NSURL: Encodable {
+extension URL: Encodable {
     func encode() throws -> JSON {
         return try encode(self.absoluteString)
     }
@@ -25,9 +26,14 @@ extension NSURL: Encodable {
 Of course Encodable can be implemented at Struct, and Class.
 
 ## Installation
-Use Carthage.
+### Carthage
 ```ruby
 github "tarunon/Illuso"
+```
+
+### Swift Package Manager
+```swift
+.Package(url: "https://github.com/tarunon/Illuso.git", Version(0, 4, 1))
 ```
 
 ## LICENSE
