@@ -17,7 +17,7 @@ Any code for encoding is not required in Illuso.
 Unfortunately, some of Objective-C Class (e.g. NSURL, NSDate, UIView ...) is unsupported in Illuso. (returned empty dictionary)  
 If you want to encode these types, can use Encodable protocol.
 ```swift
-extension NSURL: Encodable {
+extension URL: Encodable {
     func encode() throws -> JSON {
         return try encode(self.absoluteString)
     }
