@@ -31,7 +31,7 @@ public enum JSON {
         }
     }
     
-    internal func isNested() -> Swift.Bool {
+    internal func isNested() -> Bool {
         switch self {
         case .array(_), .dictionary(_):
             return true
@@ -44,7 +44,7 @@ public enum JSON {
 import Foundation
 
 public extension JSON {
-    public func stringify(prettyPrinted: Swift.Bool = false) throws -> Swift.String {
+    public func stringify(prettyPrinted: Bool = false) throws -> String {
         guard self.isNested() else {
             throw JSONError.incorrectTopLebel(self)
         }
