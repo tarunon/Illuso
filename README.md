@@ -36,6 +36,9 @@ github "tarunon/Illuso"
 .Package(url: "https://github.com/tarunon/Illuso.git", Version(0, 4, 1))
 ```
 
+### for Swift 3.x
+[Version 4.3](https://github.com/tarunon/Illuso/releases/tag/0.4.3) supoprt Swift 3.
+
 ## LICENSE
 MIT
 
