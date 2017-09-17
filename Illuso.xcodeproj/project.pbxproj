@@ -37,7 +37,7 @@
 		D2601EC31E90DA8A009951C6 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D2601EC81E90DE15009951C6 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LinuxMain.swift; path = Tests/LinuxMain.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Illuso.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Illuso.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_14 /* IllusoTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = IllusoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_14 /* IllusoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = IllusoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -222,6 +222,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Illuso;
 			};
 			name = Debug;
@@ -243,6 +244,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = Illuso;
 			};
 			name = Release;
@@ -260,6 +262,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = IllusoTests;
 			};
 			name = Debug;
@@ -277,6 +280,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
 				TARGET_NAME = IllusoTests;
 			};
 			name = Release;

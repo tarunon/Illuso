@@ -38,7 +38,7 @@ struct StandardEncodables {
     let _enum = EnumEncodables.a(123, "abc", 1.1)
 }
 
-struct CustomEncodable: Encodable {
+struct CustomEncodable: Illuso.Encodable {
     let value = 0
     
     func customValue() -> String {
@@ -46,7 +46,7 @@ struct CustomEncodable: Encodable {
     }
     
     func encode() throws -> JSON {
-        return try encode(self.customValue())
+        return try Illuso.encode(self.customValue())
     }
 }
 
@@ -58,6 +58,6 @@ class SubclassEncodables: ClassEncodables {
     let subclassValue: Int = 123
 }
 
-enum EncodableRawRepresentable: Int, Encodable {
+enum EncodableRawRepresentable: Int, Illuso.Encodable {
     case EncodableCase
 }
