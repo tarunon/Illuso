@@ -6,7 +6,7 @@
 //  Copyright © 2016年 tarunon. All rights reserved.
 //
 
-//import Foundation
+import Foundation
 
 internal func convert<T>(_ array: [(String, T)]) -> [String: T] {
     var dict = [String: T]()
