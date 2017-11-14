@@ -15,6 +15,11 @@ private extension Dictionary {
     }
 }
 
+struct SampleNestedEncodableObject: Swift.Encodable {
+    let nestedObject: SampleEncodableObject
+}
+
+extension SampleNestedEncodableObject: Illuso.Encodable { }
 
 struct SampleEncodableObject: Swift.Encodable {
     let floatValue: Float
@@ -41,6 +46,17 @@ class EncoderTests: XCTestCase {
     func testEncodeEncodableToJSON() {
         let object = SampleEncodableObject(floatValue: 1.0, stringValue: "2", intValue: 3)
         let json = try! encode(object).asObject() as! [String: Any]
+        
+        XCTAssertEqual(json["floatValue"] as? Float, 1.0)
+        XCTAssertEqual(json["intValue"] as? Int, 3)
+        XCTAssertEqual(json["stringValue"] as? String, "2")
+    }
+    
+    func testNestedEncodeEncodableToJSON() {
+        let nestedObject = SampleEncodableObject(floatValue: 1.0, stringValue: "2", intValue: 3)
+        let object = SampleNestedEncodableObject(nestedObject: nestedObject)
+        let parentJson = try! encode(object).asObject() as! [String: Any]
+        let json = parentJson["nestedObject"] as! [String: Any]
         
         XCTAssertEqual(json["floatValue"] as? Float, 1.0)
         XCTAssertEqual(json["intValue"] as? Int, 3)
