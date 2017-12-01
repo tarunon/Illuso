@@ -7,8 +7,8 @@
 
 import Foundation
 
-public extension Swift.Encodable {
-    func encodeToDictionary() throws -> [String: Any] {
+public extension Illuso.Encodable where Self: Swift.Encodable {
+    internal func encodeToDictionary() throws -> [String: Any] {
         let data = try JSONEncoder().encode(self)
         let jsonObject = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
         guard let dictionary = jsonObject as? [String: Any] else {
@@ -16,9 +16,7 @@ public extension Swift.Encodable {
         }
         return dictionary
     }
-}
 
-public extension Illuso.Encodable where Self: Swift.Encodable {
     func encode() throws -> JSON {
         return try encode(encodeToDictionary())
     }

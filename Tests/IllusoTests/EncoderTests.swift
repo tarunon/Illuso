@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import Illuso
+@testable import Illuso
 
 private extension Dictionary {
     func isEqual(to rhs: [Key: Value]) -> Bool {
