@@ -6,6 +6,8 @@
 //  Copyright © 2016年 tarunon. All rights reserved.
 //
 
+import Foundation
+
 public protocol Encodable {
     func encode() throws -> JSON
 }
@@ -102,3 +104,11 @@ extension ImplicitlyUnwrappedOptional: Encodable {
         }
     }
 }
+
+extension NSString: Encodable {
+    public func encode() throws -> JSON {
+        return .string(self as String)
+    }
+}
+
+extension NSNumber: Number {}

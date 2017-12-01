@@ -9,7 +9,69 @@
 import XCTest
 import Illuso
 
+private extension Dictionary {
+    func isEqual(to rhs: [Key: Value]) -> Bool {
+        return NSDictionary(dictionary: self).isEqual(to: rhs)
+    }
+}
+
+struct SampleNestedEncodableObject: Swift.Encodable {
+    let nestedObject: SampleEncodableObject
+}
+
+extension SampleNestedEncodableObject: Illuso.Encodable { }
+
+struct SampleEncodableObject: Swift.Encodable {
+    let floatValue: Float
+    let stringValue: String
+    let intValue: Int
+}
+
+extension SampleEncodableObject: Illuso.Encodable { }
+
 class EncoderTests: XCTestCase {
+    
+    func testEncodeEncodableToDictionary() {
+        let object = SampleEncodableObject(floatValue: 1.0, stringValue: "2", intValue: 3)
+        let expectedDict: [String: Any] = ["floatValue": 1.0, "stringValue": "2", "intValue": 3]
+        let actualDict = try! object.encodeToDictionary()
+        
+        XCTAssertTrue(expectedDict.isEqual(to: actualDict))
+        
+        XCTAssertEqual(actualDict["floatValue"] as? Float, 1.0)
+        XCTAssertEqual(actualDict["stringValue"] as? String, "2")
+        XCTAssertEqual(actualDict["intValue"] as? Float, 3)
+    }
+    
+    func testEncodeEncodableToJSON() {
+        let object = SampleEncodableObject(floatValue: 1.0, stringValue: "2", intValue: 3)
+        let json = try! encode(object).asObject() as! [String: Any]
+        
+        XCTAssertEqual(json["floatValue"] as? Float, 1.0)
+        XCTAssertEqual(json["intValue"] as? Int, 3)
+        XCTAssertEqual(json["stringValue"] as? String, "2")
+    }
+    
+    func testNestedEncodeEncodableToJSON() {
+        let nestedObject = SampleEncodableObject(floatValue: 1.0, stringValue: "2", intValue: 3)
+        let object = SampleNestedEncodableObject(nestedObject: nestedObject)
+        let parentJson = try! encode(object).asObject() as! [String: Any]
+        let json = parentJson["nestedObject"] as! [String: Any]
+        
+        XCTAssertEqual(json["floatValue"] as? Float, 1.0)
+        XCTAssertEqual(json["intValue"] as? Int, 3)
+        XCTAssertEqual(json["stringValue"] as? String, "2")
+    }
+    
+    func testEncodeJsonObject() {
+        let object = SampleEncodableObject(floatValue: 1.0, stringValue: "2", intValue: 3)
+        let jsonObjectData = try! JSONEncoder().encode(object)
+        let jsonObject = try! JSONSerialization.jsonObject(with: jsonObjectData, options: .allowFragments)
+        let json = try! encode(jsonObject).asObject() as! [String: Any]
+        XCTAssertEqual(json["floatValue"] as? Float, 1.0)
+        XCTAssertEqual(json["intValue"] as? Int, 3)
+        XCTAssertEqual(json["stringValue"] as? String, "2")
+    }
     
     func testStandardEncodable() {
         do {

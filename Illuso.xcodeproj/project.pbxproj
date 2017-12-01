@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56D29E121FBABA87009D9439 /* Encodable+Swift.Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D29E111FBABA87009D9439 /* Encodable+Swift.Encodable.swift */; };
 		D2601EBD1E90D668009951C6 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EB81E90D668009951C6 /* Encodable.swift */; };
 		D2601EBE1E90D668009951C6 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EB91E90D668009951C6 /* Encoder.swift */; };
 		D2601EBF1E90D668009951C6 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2601EBA1E90D668009951C6 /* Error.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56D29E111FBABA87009D9439 /* Encodable+Swift.Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Swift.Encodable.swift"; sourceTree = "<group>"; };
 		D2601EB81E90D668009951C6 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		D2601EB91E90D668009951C6 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
 		D2601EBA1E90D668009951C6 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D2601EB81E90D668009951C6 /* Encodable.swift */,
+				56D29E111FBABA87009D9439 /* Encodable+Swift.Encodable.swift */,
 				D2601EB91E90D668009951C6 /* Encoder.swift */,
 				D2601EBA1E90D668009951C6 /* Error.swift */,
 				D2601EBB1E90D668009951C6 /* JSON.swift */,
@@ -180,6 +183,7 @@
 				D2601EBF1E90D668009951C6 /* Error.swift in Sources */,
 				D2601EC01E90D668009951C6 /* JSON.swift in Sources */,
 				D2601EC11E90D668009951C6 /* RawRepresentable.swift in Sources */,
+				56D29E121FBABA87009D9439 /* Encodable+Swift.Encodable.swift in Sources */,
 				D2601EBD1E90D668009951C6 /* Encodable.swift in Sources */,
 				D2601EBE1E90D668009951C6 /* Encoder.swift in Sources */,
 			);
