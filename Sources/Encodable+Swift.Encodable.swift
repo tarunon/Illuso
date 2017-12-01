@@ -17,7 +17,7 @@ public extension Illuso.Encodable where Self: Swift.Encodable {
         return dictionary
     }
 
-    func encode() throws -> JSON {
+    public func encode() throws -> JSON {
         return try encode(encodeToDictionary())
     }
 }
